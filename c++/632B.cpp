@@ -3,24 +3,38 @@
 #include <cstring>
 #include <algorithm>
 using namespace std;
-int p[500005], m[500005]={0};
+int p[500005];
 char str[500005];
 int main()
 {
-	int n, ans, max_n;
+	int n, ans;
 	scanf("%d", &n);
-	for(int i = 0; i < n; i ++)
+	for(int i = 0; i < n; i++)
 	{
 		scanf("%d", &p[i]);
 	}
 	scanf("%s", str);
-	ans = 0, max_n;
-	for(int i = 0; i < n; i++)
+    ans = 0;
+    for(int i = 0; i < n; i++)
+    {
+    	if(str[i] == 'B')
+    	ans += p[i];
+	}
+	for(int i = 0; i < n; i ++)
 	{
-		for(int j = i; j < n; j++)
+		ans1 = 0, ans2 = 0;	
+		for(int j = 0; j <= i; j++)
 		{
-			if()
+			if(str[j] == 'A')
+			ans = max(ans, ans + p[j]);
+			if(str[j] == 'B')
+			{
+				str[j] = 'A';
+				ans2 = ans - p[j];
+				ans = max(ans, ans2);
+			}
 		}
 	}
+	printf("%d\n", ans);
 	return 0;
-}
+ } 

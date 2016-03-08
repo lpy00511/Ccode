@@ -5,7 +5,7 @@
 using namespace std;
 int main()
 {
-	__int64 n,a[200005], temp = 0;
+	__int64 n,a[200005];
 	scanf("%I64d", &n);
 	for(int i = 1; i <= n; i++)
 		{
@@ -33,24 +33,16 @@ int main()
 				left = i;break;
 			}
 		}
-		temp = n-k+left-1;
-		//printf("%d\n", temp);
-		__int64 j1 = left;
-		__int64 j2 = left;
+		__int64 temp = n-k+left-1;
+		__int64 j1 = left, j2;
 	    for(j = left+1; j <= n; j++)
 		{
 			if(a[j] == 0)
 			{
 	            j2 = j;
-	            //printf("%d\n", j2);
 			}
-			if(j2-j1 > temp && j2>=j1)
-			{
-				temp = j2-j1-1;
-		 	}
-			j1 = j2;
-		}
-		//printf("%d\n", temp);
+			if(j2-j1 )
+		 } 
 		__int64 ans = 0;   //×Ü½á¹û 
 		if(t == n)    
 		ans = min_x * n;
@@ -59,7 +51,7 @@ int main()
 			ans = min_x+(n-1)*(min_x+1);
 		}
 		else {
-			ans = temp*(min_x+1)+(n-temp)*min_x;
+			ans = (left-1+n-k)*(min_x+1)+(k-left+1)*min_x;
 		}
 		printf("%I64d\n", ans);
 	return 0;

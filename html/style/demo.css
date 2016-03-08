@@ -1,0 +1,32 @@
+ /*body {
+ 	background-image: url(../images/2.jpg);
+ 	background-repeat: no-repeat;
+ 	background-attachment: fixed;
+
+ }*/
+ #div1 {
+	width:100%;
+	height:1000px;
+	//background-color: #66FF99;
+	//background-image: url(../images/0.jpg);
+	//background-repeat: no-repeat;
+	/*background-position: top center;
+	使用关键字 top、buttom、left、right 和 center时 表示第一个值是y轴，第二个值是x值。
+	使用具体数值，例如百分比或者像素的时候
+	第一个值是x轴的偏移，第二个之是y轴方向的偏移。
+	*/
+	//background-position: 50px top;
+	background: #66FF99 url(../images/0.jpg) no-repeat 50px bottom;
+	/*
+	  background:颜色值 图片的地址 图片是否平铺 水平偏移值 垂直偏移值； 
+	  不需要的属性设置可以不写
+	*/
+    border: 20px dashed #ccc;
+    border-bottom: none;
+   /*border-left:10px solid red;
+   border-bottom:10px solid blue;*/
+
+}
+ #div1 p {
+ 	background-color: normal;//默认为透明的
+}

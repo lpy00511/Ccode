@@ -1,29 +1,29 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+using namespace std;
 int main()
 {
-	int n, m, k;
-	scanf("%d%d", &n, &m);
-	int ans = n, p = n, flag = 0;
-	k = 0;
-	while(p >= m)
+	int n, a;
+	scanf("%d %d", &n, &a);
+	int ans = n;
+	if(n/a == 1)
 	{
-		p = p/m;
-		k += p%m;
-		ans += p;
-		printf("%d\n", p);
-		if(p = 1)
+		while(n >= a)
 		{
-			break;	
+		    ans += n/a;
+			n = n/a+n%a;
 		}
-		else if((p+k) < m)
-		{
-			break;
-		}
-	    p = p+k;
 	}
-//	printf("%d\n", p);
+	if(n/a > 1)
+	{
+		while(n / a >= 1)
+		{
+			ans += n/a;
+			n = n/a+n%a;
+		}
+		ans = ans+n/a;
+	}
 	printf("%d\n", ans);
 	return 0;
 }

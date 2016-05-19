@@ -1,0 +1,42 @@
+
+
+#list {
+	border:1px solid #EDEDED;
+	padding:0 0 90px 0;
+}
+#list .listTitle {
+	height:32px;
+	background:url(category_tit.gif) repeat-x;
+}
+#list .listTitle h2 {
+	width:100px;
+	float:left;
+	color:#666666;
+	line-height:32px;
+	text-indent:15px;
+}
+#list .listTitle .sort {
+	width:205px;
+	float:right;
+	height:20px;
+	margin:6px 20px 0 0;
+	display:inline;
+}
+#list .imgList ul li {
+	width:237px;
+	height:325px;
+	text-align:center;
+	float:left;
+}
+#list .imgList ul li p{
+	color:#979693;
+}
+#list .imgList ul li p.p1 {
+	text-decoration:line-through;
+}
+#list .imgList ul li p.p2 {
+	color:#F6835D;
+}
+#list .imgList ul li .litpic {
+	margin-top:50px;
+}

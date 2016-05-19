@@ -1,0 +1,81 @@
+/**基本格式开始***************/
+body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,textarea,p {
+	margin:0px;
+	padding:0px;
+	font-size:13px;
+}
+ul {
+	list-style:none;
+}
+img,a img {
+	border:none;
+}
+a {
+	text-decoration:none;
+}
+a:hover {
+	text-decoration:underline;
+}
+.auto {
+	width: 97%;
+	margin:0 auto;
+}
+/**基本格式结束***************/
+#top {
+	height: 62px;
+	background: url(top_bg.png) repeat-x;
+}
+#top .topLogo {
+	margin: 10px 0px 0px 25px;
+	float: left;
+}
+#top .topLink ul li{
+	float: right;
+	display: block;
+}
+#top .topLink ul li a{
+	color:#FFFFFF;
+	font-size: 11px;
+}
+#top .topLink ul li a.first {
+	color:#8F8F8F;
+}
+#top .topLink .li0 {
+	margin: 20px 20px 20px 20px;
+}
+#top .topLink .li1 {
+	margin: 20px 0px 20px 20px;
+}
+#main {
+	background: #DEDEDE;
+	height: 1000px;
+}
+#main .main1 {
+	background: #FFFFFF;
+	display: block;
+	margin: 20px 20px 20px 20px;
+	float: left;
+	padding-bottom: 20px;
+}
+#main .main1 .article {
+	margin-top:30px;
+}
+#main .main1 .article h2 {
+	font-size: 20px;
+	line-height: 50px;
+}
+#main .main1 .article h3 {
+	font-size: 15px;
+	color:	#6B6B6B;
+	line-height: 25px;
+}
+#main .main1 .article h4 {
+	font-size: 11px;
+	color:#6E6E6E;
+	line-height: 35px;
+}
+#main .main1 .article p.main1_p0,p.main1_p1 {
+	font-size: 15px;
+	text-indent:30px;
+	line-height: 25px;
+}

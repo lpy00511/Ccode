@@ -1,0 +1,32 @@
+
+#wrap #leftBody p.p2 {
+	color:#000000;
+	font-size:18px;
+	margin:30px 0px 30px 0px;
+}
+#wrap #leftBody form label {
+	display:block;
+	font-size:14px;
+	color:#555555;
+	margin:15px 0px 3px 0px;
+}
+#wrap #leftBody form input {
+	height:20px;
+}
+#wrap #leftBody form input.btn_sub{
+	background:url(default.png);
+	display:block;
+	width:103px;
+	height:27px;
+	text-align:center;
+	color:#ffffff;
+	line-height:27px;
+	text-decoration:none;
+	font-weight:bold;
+	float:left;
+	border:none;
+	margin-top:10px;
+}
+#wrap #leftBody form input.btn2 {
+	margin-left:150px;
+}

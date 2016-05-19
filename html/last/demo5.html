@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<title>遗漏</title>
+<link rel="stylesheet" type="text/css" href="test.css" />
+<style type="text/css">
+p {
+	text-decoration:underline;
+	width: 200px;
+	height: 200px;
+	background: green;
+	opacity:0.1; /*不透明度为90% ie8 以下都不支持*/
+	filter:alpha(opacity=10);  /*对ie6 7 8 有效*/
+}
+</style>
+</head>
+<body>
+<!-- 
+1.外部样式：通过link标签直接引入.css文件
+2.内页样式：写在html页面里的style标签里面
+3.行内样式：写在对应标签上面的style里面
+-->
+<p style="font-size:30px">我是P标签</p>
+<embed src="http://player.youku.com/player.php/sid/XMTU3Mjk3MTYxNg==/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+</body>
+</html>

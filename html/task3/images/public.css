@@ -1,0 +1,27 @@
+body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,textarea,p {
+	margin:0px;
+	padding:0px;
+	font-size:13px;
+	font-family:宋体；
+}
+ul {
+	list-style:none;
+}
+img,a img {
+	border:none;
+}
+a {
+	text-decoration:none;
+}
+a:hover {
+	text-decoration:underline;
+}
+
+.auto {
+	width:960px;
+	margin:0 auto;
+}
+#main {
+	background-color: #eee;
+	border: 1px solid #999;
+}

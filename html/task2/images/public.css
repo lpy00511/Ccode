@@ -48,34 +48,172 @@ a:hover {
 }
 #main {
 	background: #DEDEDE;
-	height: 1000px;
+	height: 3030px;
 }
 #main .main1 {
 	background: #FFFFFF;
 	display: block;
-	margin: 20px 20px 20px 20px;
+	margin: 20px 20px 0px 20px;
 	float: left;
 	padding-bottom: 20px;
 }
 #main .main1 .article {
-	margin-top:30px;
+	width: 90%;
+	margin: 30px auto 0px auto;
 }
-#main .main1 .article h2 {
+#main .main1 .article img {
+	margin: 5px 0px 5px 0px;
+}
+#main .main1 .title h2 {
 	font-size: 20px;
 	line-height: 50px;
 }
-#main .main1 .article h3 {
+#main .title h3 {
 	font-size: 15px;
 	color:	#6B6B6B;
 	line-height: 25px;
 }
-#main .main1 .article h4 {
+#main .title h4 {
 	font-size: 11px;
 	color:#6E6E6E;
 	line-height: 35px;
 }
-#main .main1 .article p.main1_p0,p.main1_p1 {
+#main .main1 .article p {
 	font-size: 15px;
 	text-indent:30px;
 	line-height: 25px;
+}
+#main .main1 .article ul li {
+	display: block;
+	margin: 6px 0px 0px 20px;
+}
+#main .main1 h2 {
+	font-size: 20px;
+	line-height: 50px;
+}
+#main .main1 .picture {
+	border: 1px solid #969696;
+	height: 125px;
+	width: 125px;
+	margin: 15px 0 0 40px;
+}
+#main .main1 .picture h3 {
+	font-size: 10px;
+	line-height: 10px;
+	text-align: center;
+	padding: 10px 0 0 0;
+}
+#main .main1 .picture img {
+	margin: 15px 5px 0px 15px;
+}
+#main .main1 .h0 {
+	font-size: 18px;
+	text-indent: 15px;
+}
+#main .main1 .article .rankList li {
+	margin: 8px 0px 0px 50px;
+	font-size: 13px;
+	font-weight: bold;
+}
+#main .main1 .article .table{
+	border:solid #8F8F8F; 
+	border-width:0px 0px 0px 1px;
+}
+#main .main1 .article .table th {
+	border:solid #8F8F8F;
+	border-width:0px 1px 1px 0px;
+	background: black;
+	color:#FFFFFF;
+	padding: 2px 2px;
+}
+#main .main1 .article .table td {
+	border:solid #8F8F8F; 
+	border-width:0px 1px 1px 0px; 
+	padding:2px 2px;
+}
+#main .main1 .article .table tr {
+	width: 1000px;
+	height:10px;
+}
+#main .main1 .article .table .th1, .th2 {
+	width: 400px;
+	height:10px;
+	text-align: left;
+	font-weight: none;
+}
+#main .main1 .article .table .th3 {
+	width: 150px;
+	height: 10px;
+	text-align: left;
+	font-weight: none;
+}
+#main .main1 .article .table .lastTr {
+	background:#B5B5B5;
+}
+#main .main1 .article .last_img {
+	float: left;
+} 
+#main .main1 .article .h20 {
+	font-size: 15px;
+	margin: 0px 0px 0px 10px;
+}
+#main .main1 .article .left {
+	font-size: 10px;
+	width:30%;
+	display: block;
+	float: left;
+	text-align: right;
+}
+#main .main1 .article .left .li1 {
+	margin-bottom: 50px;
+}
+#main .main1 .article .left .li2 {
+	margin: 20px 0px 50px 0px;
+}
+#main .main1 .article .left .li3 {
+	margin:18px 0px;
+}
+#main .main1 .article .right {
+	font-size: 10px;
+	width:70%;
+	display: block;
+	float: right;
+	text-align: left;
+}
+#main .main1 .article .right .username {
+	padding: 4px;
+	font-size: 11px;
+	margin-bottom: 10px;
+}
+#main .main1 .article .right .p_cue1 {
+	font-size: 11px;
+	color:#AAAAAA;
+	margin-bottom: 20px;
+}
+#main .main1 .article .right .select {
+	margin: 10px 0px;
+}
+#main .main1 .article .bottom {
+	width:800px;
+	height:60px;
+	margin:30px auto 30px 10%;
+
+}
+#main .main1 .article .btn_l {
+	background: url(btn_l.png) no-repeat;
+	height:60px;
+	width: 8px;
+	float: left;
+}
+#main .main1 .article .btn_r {
+	background: url(btn_r.png) no-repeat;
+	height:60px;
+	width: 8px;
+	float: right;
+}
+#main .main1 .article .btn {
+	background: url(btn_bg.png) repeat-x;
+	width: 784px;
+	height:60px;	
+	float: left;
 }

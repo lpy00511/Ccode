@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>position的属性测试</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.div1 {   /*包含块*/
+			position: absolute;
+		    width: 400px; 
+		    height: 400px; 
+		    background-color: pink;
+		}
+		.div1_1 {  /*定位元素填充包含块右下*/
+			position: absolute;
+			top: 50%;
+			bottom: 0px;
+			left: 50%;
+			right: 0;
+			background-color: blue;
+		}
+		.div2 {
+			top: 410px;
+		}
+		.div2_1 {  /*将一个元素定位在包含块之外 */
+			position: absolute;
+			top: -50px;
+			right: -10px;
+			left:75%;
+			bottom: 50%;
+			background-color: green;
+		}
+		.div3 {
+			top:820px;
+		}
+		.div3_1 {
+			position: absolute;
+			top:0px;
+			bottom:0px;
+			right: 50%;
+			left: 0px;
+			background-color: orange;
+			/* 如果没有内外边距或者边框，限定长度的优先级大于position
+			如果出现了边距或者边框，设为auto时显示不会超出包含块
+			padding 只有当width和height都设定值时才能超出包含块
+			width: auto;
+			height: auto;height: 100%;
+			*/
+			width: 50%;
+			height:100%;
+			padding: 20px;
+		}
+		.div4 {
+			left:440px;
+		}
+		.div4_1 {
+			position: absolute;
+			top:0px;
+			right:20%;
+			left:0px;
+			bottom:0px;
+			background-color: #00FFFF;
+			overflow-y: scroll;
+		}
+		.div5 {
+			left:440px;
+			top:420px;
+		}
+		.div5_1 {
+			position: absolute;
+			top:0px;
+			right:50%;
+			left:0px;
+			bottom:0px;
+			background-color: #98FB98;
+			/*
+			min-width: 250px;
+			min-height:300px;
+			*/
+			max-height: 300px;
+			max-width:250px;
+		}
+		.div6 {
+			left:440px;
+			top:840px;
+		}
+		.div6_1 {
+			position: absolute;
+			top:0px;
+			left:0px;
+			background-color: #8B008B;
+			width:300px;
+			height: 200px;
+			clip: rect(10px, 100px, 150px, 10px);/*语法格式为：clip:rect(top,right,bottom,left),其中right和bottom是相对于左上角的偏移*/
+		}
+	</style>
+</head>
+<body style="width: 100%; height:100%; background-color: #E6CAFF">
+<div>
+<div class="div1">
+	<div class="div1_1">
+		html
+	</div>
+</div>
+<div class="div1 div2">
+	<div class="div2_1">
+		
+	</div>
+</div>
+<div class="div1 div3">
+	<div class="div3_1">
+		html
+	</div>
+</div>
+<div class="div1 div4">
+	<div class="div4_1">
+		Youth is not a time of life; it is a state of mind; it is not a matter of rosy cheeks, red lips and supple knees; it is a matter of the will, a quality of the imagination, a vigor of the emotions; it is the freshness of the deep springs of life. 
+		Youth means a temperamental predominance of courage over timidity, of the appetite for adventure over the love of ease. This often exists in a man of 60 more than a boy of 20. Nobody grows old merely by a number of years. We grow old by deserting our ideals. 
+	</div>
+</div>
+<div class="div1 div5">
+	<div class="div5_1">
+		html
+	</div>
+</div>
+<div class="div1 div6">
+	<div class="div6_1">
+		Youth is not a time of life; it is a state of mind; it is not a matter of rosy cheeks, red lips and supple knees; it is a matter of the will, a quality of the imagination, a vigor of the emotions; it is the freshness of the deep springs of life. 
+		Youth means a temperamental predominance of courage over timidity, of the appetite for adventure over the love of ease. This often exists in a man of 60 more than a boy of 20. Nobody grows old merely by a number of years. We grow old by deserting our ideals. 
+	</div>
+</div>
+<div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+body,div,h1,h2,ol,li {
+	margin: 0px;
+	padding: 0px;
+}
+#Hnav-wrap {
+	background-color: #099;
+	width: 100%;
+	min-width: 1200px;
+}
+.cfix {
+	zoom:1;
+}
+.Hnav-list.li {
+	font-size: 14px;
+}
+.Hnav-title1 {
+	zoom:normal;
+}
+.Hnav-title2 {
+	zoom:5;
+}
+.Hnav-title2 {
+	zoom:500%;
+}

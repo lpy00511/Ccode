@@ -1,0 +1,12 @@
+body,div,h1,h2,ol,li {
+	margin: 0px;
+	padding: 0px;
+}
+#Hnav-wrap {
+	background-color: #099;
+	width: 100%;
+	min-width: 1200px;
+}
+.f1 {
+	float:left;
+}

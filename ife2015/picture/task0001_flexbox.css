@@ -1,0 +1,100 @@
+/*
+.flex-container {
+	display: flex;
+	width: 80%;
+	height: 600px;
+	background-color: pink;
+	flex-direction: row;
+	flex-wrap: wrap;
+	
+	flex-flow: row wrap;相当于flex-dirextion 和 flex-wrap的复合属性
+	justify-content: space-around;定义了主轴上的对齐方式
+	align-items: baseline; stretch在垂直方向上没有设置高度的项目被拉伸
+	align-content: space-between;
+}
+.flex-item {
+	background-color: blue;
+	width: 100px;
+	height: 70px;
+	margin: 5px;
+	flex-shrink: 1;
+}
+.a {
+	margin-top: 10px;
+	height: 100px;
+}
+.b {
+	margin-top: 20px;
+	height: 150px;
+}
+.c {
+	margin-top: 30px;
+	height: 80px;
+}
+.d {
+	margin-top: 30px;
+	height: 200px;
+}
+.a {
+	align-self: flex-end;
+	flex: 1;
+}
+.order1 {
+	align-self: center;
+	flex: 2;
+}
+.order2 {
+	align-self: flex-start;
+	flex: 3;
+}
+
+*/
+#container {
+	width: 80%;
+	height: 600px;
+	background-color: red;
+	margin: 0 auto;
+}
+.first {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.sharp1 {
+	width: 200px;
+	height: 40px;
+	background-color: #FFF;
+	border: 1px solid black;
+	border-radius: 10px;   /*IE8 和 Opera不支持*/
+	margin: 10px auto auto 10px;
+}
+.sharp2 {
+	width: 100px;
+	height: 60px;
+	background-color: #FFF;
+	border: 1px solid black;
+	border-radius: 10px;   /*IE8 和 Opera不支持*/
+	margin: 10px auto 10px 10px;
+}
+.second {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: space-between;
+}
+.div-a {
+	background-color: pink;
+	width: 20%;
+	height: 100px;
+}
+.div-b {
+	background-color: blue;
+	height: 100px;
+	width: 80%;
+}
+.div-c {
+	background-color: yellow;
+	height: 100px;
+	width: 100%;
+}  

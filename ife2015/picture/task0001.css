@@ -1,0 +1,126 @@
+h1 {
+	color: blue;
+}
+h2 {
+	font-size: 14px;
+}
+p {
+	background-color: black;
+	font-size: 12px;
+	color: yellow;
+}
+img {
+	border: 2px solid red;
+}
+#bg {
+	background-color: red;
+	width: 80%;
+	height: 1000px;
+	position: relative;
+	top: 0px; left: 0px; bottom: 0px; right: 0px;
+	margin-left: auto;margin-right: auto;
+}
+.sharp {
+	border: 2px solid black;
+	border-radius: 8px;
+}
+.sharp1 {
+	margin-top:50px;
+	margin-left: 100px;
+	width: 100px;
+	height: 20px;
+}
+.sharp2 {
+	margin-top:10px;
+	margin-left: 100px;
+	width: 50px;
+	height: 40px;
+}
+.contact {
+	position: absolute;
+	top: 200px; left:0px; right: 0px; bottom: 0px;
+}
+.div_a {
+	background-color: pink;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+}
+.div_b {
+	background-color: blue;
+	height: 100px;
+	position: absolute;
+	top:0px; left: 100px; right:0px;
+}
+.div_c {
+	background-color: yellow;
+	height: 100px;
+	position: absolute;
+	top: 100px; left: 0px; right: 0px;
+}
+#bottom {
+	position: absolute;
+	width: 100%;
+	top: 400px;left: 0px;
+}
+.box {
+	width: 200px;
+	height: 100px;
+	background-color: blue;
+}
+.top1 {
+	position: absolute;
+	top: 20px; left: 20px; 
+}
+.top2 {
+	background-color: blue;
+	height: 100px;
+	position: absolute;
+	top: 20px; left: 240px; right: 240px;
+}
+.top3 {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+.mid1 {
+	position: absolute;
+	top: 140px; left: 20px; 
+}
+.mid2 {
+	background-color: blue;
+	height: 100px;
+	position: absolute;
+	top: 140px; left: 240px; right: 240px;
+}
+.mid3 {
+	position: absolute;
+	top: 140px;
+	right: 20px;
+}
+.last1 {
+	position: absolute;
+	top: 260px; left: 20px; 
+}
+.last2 {
+	background-color: blue;
+	height: 100px;
+	position: absolute;
+	top: 260px; left: 240px; right: 240px;
+}
+.last3 {
+	position: absolute;
+	top: 260px;
+	right: 20px;
+}
+#last {
+	width: 100%;
+	position: absolute;
+	top: 780px;
+	left: 20px;
+}
+.float1 {
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}

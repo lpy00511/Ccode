@@ -1,0 +1,28 @@
+body {
+			font-family: "华文新魏","宋体";
+			color: #333;
+			background-color: #CCC;
+			margin: 1em 10%;
+	}
+h1 {
+	color: #333;
+	background-color: transparent;
+}
+a {
+	background-color: transparent;
+	font-weight: bold;
+	text-decoration: none;
+}
+.div1 {
+	float: left;
+	color: #333;
+	padding: 2em 4em;
+}
+img{
+	display: block;
+	clear: both;
+	margin: 10px auto;
+}
+p {
+	text-align: center;
+}

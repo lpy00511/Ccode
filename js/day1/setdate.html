@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>获得年份 </title>
+<script type="text/javascript">
+var mydate=new Date(); 
+document.write(mydate+"<br>");
+document.write(mydate.getFullYear()+"<br>");
+var myyear = mydate.getFullYear();
+document.write(myyear+"<br>");
+var weekday = ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+var mynum = mydate.getDay();
+document.write(mydate.getDay());
+document.write("今天是："+weekday[mynum]);
+mydate.setTime(mydate.getTime()+2*60*60*1000);
+document.write(mydate);
+</script>
+</head>
+<body>
+</body>
+</html>

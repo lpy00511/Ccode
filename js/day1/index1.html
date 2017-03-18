@@ -1,0 +1,29 @@
+<!--oncklick事件 
+created by lpy on 20170311
+这种用法现在较少，一般是用js的click()方法； 
+-->
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>单击事件 </title>
+<script type="text/javascript">
+  function openwin(){
+     window.open('http://www.imooc.com','_blank','height=600,width=400,top=100,toolbar=no,left=0,menubar=no,scrollbars=no,status=no');}
+    function addZ(){
+        var numa, numb,sum;
+        numa=6;
+        numb=8;
+        sum=numa+numb;
+        document.write("两数和为:"+sum);
+    }
+</script>
+</head>
+<body>
+  <form>
+    <input name="点击我" type="button" value="点击我" onclick="addZ()"/>
+  </form>
+</body>
+</html>

@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>position包含块的确定</title>
 	<style type="text/css">
-		div{
-			height:1px;
-			font-size: 0;
-			background:#aaa;
-		}
+	body{
+		padding: 0;
+		margin: 0;
+	}
 	</style>
-
 </head>
 <body>
-<div ></div>
+ <div style="margin:50px">
+      <h4><b>操作成功</b></h4>
+      <h4><span id = "time"></span>秒后回到主页<a href="http://www.imooc.com/course/list">返回</a></h4>
+  </div>
+  <script type="text/javascript">  
+ 
+   //获取显示秒数的元素，通过定时器来更改秒数。
+   var num = 5;
+   function  stime(argument) {
+   		document.getElementById("time").innerHTML=num;
+   		num --;
+   		if(num == 0){
+   			//window.open('http://www.imooc.com/course/list','_self');
+   			window.location.href="http://www.imooc.com/course/list";
+   		}
+   		else{
+   			setTimeout("stime()", 1000);
+   		}
+   }
+   window.onload= stime();
+   //通过window的location和history对象来控制网页的跳转。
+   
+ </script>
 </body>
 </html>

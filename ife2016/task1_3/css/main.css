@@ -1,0 +1,62 @@
+.bg {
+	background-color: #eee;
+	padding: 20px;
+	border: 1px solid #999;
+}
+.left{
+	width: 200px;
+	height: 100px;
+	background-color: #FFF;
+	float: left;
+	border: 1px solid #999;
+}
+.left span {
+	display: inline-block;
+}
+.logo{
+	background-image: url(logo.png);
+	background-repeat: no-repeat;
+	width: 80px;
+	height: 80px;
+	margin: 10px;
+	float: left;
+}
+.left .name{
+	width: 80px;
+	height: 60px;
+	margin: 20px 10px;
+	float: left;
+}
+.middle {
+	border: 1px solid #999;
+	margin: 0px 140px auto 220px;
+	padding: 10px;
+}
+.right{
+	float: right;
+	width: 120px;
+	height: 500px;
+	border: 1px solid #999;
+}
+.person{
+	background-repeat: no-repeat;
+	width: 80px;
+	height: 80px;
+	margin: 30px 20px 10px 20px;
+}
+.person_1 {
+	background-image: url(person_1.png);
+}
+.person_2 {
+	background-image: url(person_1.png);
+}
+.person_3 {
+	background-image: url(person_1.png);
+}
+.person_4 {
+	background-image: url(person_1.png);
+}
+
+
+
+

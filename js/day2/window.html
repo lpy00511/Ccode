@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>window对象</title>
+<script type="text/javascript">
+	alert("欢迎来到慕课网");
+	function openwin(){
+		window.open("http://www.imooc.com","newwindow", "height=400,width=600,scrollbars=no");
+	}
+	var btn = document.getElementById("button1");
+	btn.onclick = function(){
+		window.open("http://www.imooc.com","newwindow", "height=400,width=600,scrollbars=no");
+	};
+</script>
+</head>
+<body >
+<form>
+<input type="button" value="点击我，打开新窗口" id="button1" onclick="openwin()"/>
+</form>
+</body>
+</html>

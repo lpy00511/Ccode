@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>定时器</title>
+<script type="text/javascript">
+  var attime;
+  function clock(){
+    var time=new Date();          
+    attime = time.getHours()+":"+time.getMinutes()+":"+time.getSeconds();
+    document.getElementById("clock").value = attime;
+  }
+  var i = setInterval(clock,100);
+  
+</script>
+</head>
+<body>
+<form>
+<input type="text" id="clock" size="50"/>
+<input type="button" value = "stop" style="width: 40px; height: 20px" onclick="clearInterval(i)"/>
+</form>
+</body>
+</html>

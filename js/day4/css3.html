@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8">
+<title>css3新特性</title>
+<style type="text/css">
+.wrap {
+    width:220px; 
+    border:20px dashed #000; 
+    padding:20px; 
+    font-weight:bold; 
+    color:#000; 
+    background:#ccc url(http://static.mukewang.com/static/img/logo_index.png) ; 
+    /*background-origin: border-box;*/
+    background-clip: content-box;
+    position: relative;
+}
+.wrap span { 
+    position: absolute; 
+    left:0; 
+    top:0;
+}
+.content {
+    height:80px; 
+    border:1px solid #333;
+}
+.middle {
+	border: 2px solid red;
+	height: 200px;
+	width: 200px;
+	margin: 20px;
+	/*border-radius: 100px 0 0 100px; radius设置半圆时，height和width值也要根据半圆的方向而改变*/
+	border-radius: 10px;
+	box-shadow:0 0 10px 5px #cc33dd inset, 4px 4px 10px 5px #aaa;
+}
+.border_image1{
+     width:210px; 
+     height:210px; 
+     border:20px solid #ddd;
+    -webkit-border-image: url(image/timg.jpg) 70 round;
+    border-image: url(image/timg.jpg) 70 70 round;
+}
+</style>  
+</head> 
+<body>
+<div class="wrap"><span>padding</span>
+    <div class="content">content</div>
+</div>
+<div class="middle">
+	
+</div>
+<div class="border_image1">
+    为我镶上漂亮的画框吧
+</div>
+</body>
+</html>

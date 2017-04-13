@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript">
+	function getnum(){
+	  var mynode= document.getElementsByName("myt");  
+	  alert(mynode.length);
+	}
+</script>
+</head>
+<body>
+<input name="myt" type="text" value="1">
+<input name="myt" type="text" value="2">
+<input name="myt" type="text" value="3">
+<input name="myt" type="text" value="4">
+<input name="myt" type="text" value="5">
+<input name="myt" type="text" value="6">
+
+<br />
+<input type="button" onclick="getnum()" value="看看有几项？" />
+  <form name="Input">
+            <table align="center" width="500px" height="50%" border="1">
+                <tr>
+                    <td align="center" width="100px">
+                        学号:
+                    </td>
+                    <td align="center" width="300px">
+                        <input type="text" id=userid name="user" onblur="validate();">
+                        <div id=usermsg></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="100px">
+                        姓名:
+                    </td>
+                        <td align="center">
+                        <input type="text" name="name">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="%45">
+                        性别:
+                    </td>
+                    <td align="center">
+                        <input type="radio" name="sex" value="男">
+                        男
+                        <input type="radio" name="sex" value="女">
+                        女
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="30%">
+                        年龄:
+                    </td>
+                    <td align="center" width="300px">
+                        <input type="text" name="age">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="100px">
+                        地址:
+                    </td>
+                    <td align="center" width="300px">
+                        <input type="text" name="addr">
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+        <h1 id="myHead" onclick="getValue()">
+            看看三种获取节点的方法?
+        </h1>
+        <p>
+            点击标题弹出它的值。
+        </p>
+        <input type="button" onclick="getElements()"
+            value="看看name为sex的节点有几个?" />
+        <Br>
+        <input type="button" onclick="getTagElements()"
+            value="看看标签名为input的节点有几个?" />
+         <form>
+          请选择你爱好:<br>
+          <input type="checkbox" name="hobby" id="hobby1">  音乐
+          <input type="checkbox" name="hobby" id="hobby2">  登山
+          <input type="checkbox" name="hobby" id="hobby3">  游泳
+          <input type="checkbox" name="hobby" id="hobby4">  阅读
+          <input type="checkbox" name="hobby" id="hobby5">  打球
+          <input type="checkbox" name="hobby" id="hobby6">  跑步 <br>
+          <input type="button" value = "全选" onclick = "checkall();">
+          <input type="button" value = "全不选" onclick = "clearall();">
+          <p>请输入您要选择爱好的序号，序号为1-6:</p>
+          <input id="wb" name="wb" type="text" >
+          <input name="ok" type="button" value="确定" onclick = "checkone();">
+        </form>
+         <p id="intro">我的课程</p>  
+	  <ul><li title="JS">JavaScript</li><li title="JQ">JQuery</li><li title="">HTML/CSS</li><li title="JAVA">JAVA</li><li title="">PHP</li></ul>  
+	  <h1>以下为li列表title的值,当title为空时，新设置值为"WEB前端技术":</h1>
+     <script type="text/javascript">
+         function getValue()
+          {
+              var myH = document.getElementById("myHead");
+              alert(myH.innerHTML)
+          }
+          function getElements()
+          {
+             var myS = document.getElementsByName("sex");
+              alert(myS.length);
+          }
+
+          function getTagElements()
+          {
+              var myI = document.getElementsByTagName("input");
+              alert(myI.length);
+          }
+          function checkall(){
+          var hobby = document.getElementsByTagName("input");
+          // 任务1 
+           for(var i = 0; i < hobby.length; i++){
+           		hobby[i].checked = true;
+          	 	}
+	       }
+	       function clearall(){
+	           var hobby = document.getElementsByName("hobby");   
+	         // 任务2 
+	          for(var i = 0; i < hobby.length; i++){
+           		hobby[i].checked = false;
+           		}
+	       } 
+	       function checkone(){
+	           var j=document.getElementById("wb").value;
+	         // 任务3
+	           document.getElementsByName("hobby")[j-1].checked=true;
+	        }
+	      var Lists=document.getElementsByTagName("li");
+		  for (var i=0; i<Lists.length;i++)
+		  {
+		    var text=Lists[i].getAttribute("title");
+		    if(text=="")
+		    {
+		    Lists[i].setAttribute("title", "WEB前端技术");
+		    document.write(Lists[i].getAttribute("title")+"<br>");
+		    }
+		    else{
+		    	document.write(text +"<br>");
+		    }
+		  }
+		var x = document.getElementsByTagName("ul")[0].childNodes;
+		document.write("ul节点的个数"+x.length+"<br>");
+		document.write("节点的类型"+x[0].nodeType);
+     </script> 
+</body>
+</html>

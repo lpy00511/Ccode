@@ -1,0 +1,54 @@
+/*.pagination{
+	width: 393px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.pagination li{
+	line-height: 25px;
+	display: inline;
+	float: left;
+	margin: 0 5px;
+}
+第一种：width+ margin：auto
+*/
+/*.pagination{
+	text-align: center;
+	font-size: 0px;
+}
+.pagination li{
+	line-height: 25px;
+	display: inline-block;
+	*display: inline;
+	font-size: 16px;
+	margin: 0 5px;
+}
+第二种：父容器的text-align:center;
+      display:inline-block;	
+*/
+.pagination{
+	text-align: center;
+	font-size: 0px;
+}
+.pagination li{
+	line-height: 25px;
+	display: inline-block;
+	*display: inline;
+	font-size: 16px;
+	margin: 0 5px;
+}
+.pagination a{
+	display: block;
+	color: #f2f2f2;
+	text-shadow:1px 0 0 #101011;
+	padding: 0 10px;text-decoration: none;
+	border-radius: 2px;
+	-moz-border-radius: 2px; /* Firefox */
+  	-webkit-border-radius: 2px; /* Safari 和 Chrome */
+	box-shadow: 0 1px 0 #5a5b5c inset, 0 1px 0 #080808;
+	background: -webkit-linear-gradient(top,#434345,#2f3032);
+}
+.pagination a:hover {
+  text-decoration: none;
+  box-shadow: 0 1px 0 #f9bd71 inset,0 1px 0 #0a0a0a;
+  background: -webkit-linear-gradient(top,#f48b03,#c87100);
+}

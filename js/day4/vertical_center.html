@@ -1,0 +1,315 @@
+<!DOCTYPE <html>
+<head>
+	<title>8种垂直居中定位的方式</title>
+	<style type="text/css">
+		#div1{
+			display:none;
+			position: absolute;
+			width: 300px;
+			height: 300px;
+			margin:auto;
+			top: 0;left: 0;bottom: 0;right: 0;
+			background-color: #eee;
+			overflow: auto;
+		}
+		#div2{
+			display:none;
+			width: 300px;
+			height: 300px;
+			position:absolute;
+			margin: -150px 0 0 -150px;
+			background-color: pink;
+			left: 50%;
+			top: 50%;
+		}
+		#div3 {
+			display: none;
+			width: 300px;
+			height: 300px;
+			background-color: green;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform:translate(-50%, -50%);
+			-webkit-transform: translate(-50%, -50%);
+			-moz-transform: translate(-50%, -50%);
+		}
+		.container,.isTable{
+			display: none;
+			background-color: #AAA;
+			width: 200px;
+			height: 200px;
+		}
+		.isTable .Table-cell{
+			display: table-cell;
+			vertical-align: middle;
+			height: 100px;
+			width: 100px;
+		}
+		.center-block{
+			background-color: red;
+			padding: 5px;
+			text-align: center;
+		}
+		#div4{
+			display: none;
+			height: 300px;
+			background-color: blue;
+		}
+		#div4 .isBlock{
+			background-color: pink;
+			display: inline-block;
+			height: 100px;
+			background-color: orange;
+		}
+		#div4:before{
+			content: "";
+			display: inline-block;
+			height: 100%;
+			vertical-align: middle;
+		}
+		.center-block{
+			vertical-align: middle;
+		}
+		.five-table{
+			display: none;
+			width: 200px;
+			height: 200px;
+		}
+		.five{             
+			display:table-cell;             
+			vertical-align:middle;             
+			text-align:center;             
+			width:120px;             
+			height:120px;             
+			background:purple;
+		}
+		.six{
+			display: none;
+			width: 300px;
+			height: 300px;
+			/*display: -webkit-box;*/
+			-webkit-box-orient: horizontal;
+			-webkit-box-align: center;
+			background-color: pink;
+		}
+		.child-one{
+			background-color: lightblue;
+			-webkit-box-flex: 1;
+			height: 100px;
+		}
+		.child-two{
+			background-color: lightgray;
+			-webkit-box-flex: 2;
+			height: 110px;
+		}
+		.child-three{
+			background-color: lightgreen;
+			-webkit-box-flex: 3;
+			height: 120px;
+		}
+		body {
+			height: 100%;
+			width: 100%;
+			margin: 0;
+  			display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+			display: -moz-box;
+			display: -ms-box;
+			display: flex;   /*NEW：IE11, Chrome 29+, Opera 12.1+, Firefox 22+*/
+			display: -webkit-flex; /*NEW：Chrome 21-28+, safari6.1+*/
+			display: -ms-flex; /*NEW：IE10*/
+			-webkit-align-items:center;
+			align-items:center;
+			-webkit-box-align:center;
+			-moz-box-align:  center;
+			-ms-flex-align:center;
+			-webkit-box-pack: center;
+			-moz-box-pack: center;
+			-webkit-justify-content:center;
+			justify-content:center;
+		}
+		.seven {
+			display: none;
+			width: 300px;
+			height: 300px;
+			background-color: lightgreen;
+			/*display: flex;
+			display: -webkit-flex;*/
+			-webkit-align-items:center;
+		}
+		.shengbei {
+			display: none;
+		}
+		.shengbei .middle{
+			width: 100%;
+			height: 100px;
+			background-color: blue;
+			float: left;
+		}
+		.shengbei .left{
+			float: left;
+			width: 180px;
+			height: 100px;
+			margin-left: -100%;
+			background-color: #0C9;
+			position:relative;
+			left: -180px;
+		}
+		.shengbei .right{
+			float: left;
+			width: 200px;
+			height: 100px;
+			margin-left: -200px;
+			background-color: lightgreen;
+			position: relative;
+			left: 200px;
+		}
+		.shuangfei{
+			display: none;
+		}
+		.shuangfei .middle{
+			width: 100%;
+			height: 100px;
+			float: left;
+			background-color: blue;
+		}
+		.shuangfei .left{
+			float: left;
+			width: 180px;
+			height: 100px;
+			margin-left: -100%;
+			background-color: #0c9;
+		}
+		.shuangfei .right{
+			float: left;
+			height: 100px;
+			width: 200px;
+			margin-left: -200px;
+			background-color: lightgreen;
+		}
+		.shuangfei .middle .inside{
+			margin: 0 200px 0 180px;
+			height: 100px;
+		}
+		.flex_box{
+			display: flex;
+			width: 100%;
+			height: 100px;
+			margin: 10px;
+		}
+		.flex_box .left{
+			width: 180px;
+			height: 100px;
+			float: left;
+			background-color: lightpink;
+			margin: 10px;
+			
+		}
+		.flex_box .middle{
+			-prefix-box-flex:1;
+			flex:1;
+			height: 100px;
+			background-color: blue;
+			margin: 10px;
+		}
+		.flex_box .middle:hover{
+			-prefix-box-flex:2;
+			flex:2;
+			cursor: pointer;
+			z-index: 999;
+		}
+		.flex_box .right{
+			width: 200px;
+			height: 100px;
+			float: right;
+			margin: 10px;
+			background-color: lightgreen;
+		}
+	</style>
+</head>
+<body>
+	<!--第一种绝对定位居中-->
+	<div id="div1">
+	</div>
+	<!--第二种：负边距-->
+	<div id="div2">
+	</div>
+	<!--第三种：transform变形-->
+	<div id="div3">
+	</div>
+	<!--第四种：表格-->
+	<div class="container isTable" style="border: 1px solid #eee">
+		<div class="Table-cell">
+			<div class="center-block">
+				qqq
+			</div>
+		</div>
+	</div>
+	<!--第五种：行内块元素，其思想是使用display:inline-block,vertical-align:middle,-->
+	<div id="div4">
+		<div class="isBlock">
+			inline-blcok
+		</div>
+	</div>
+	<div class="five-table">
+		<div class="five">111</div>
+		<div class="five">2222</div>
+	</div>
+	<div class="six">
+		<div class="child-one">1</div>
+		<div class="child-two">2</div>
+		<div class="child-three">3</div>
+	</div>
+	<div class="seven">
+	</div>
+	<div class="shengbei">
+		<div class="middle"></div>
+		<div class="left"></div>
+		<div class="right"></div>
+	</div>
+	<div class="shuangfei">
+		<div class="middle">
+			<div class="inside"></div>
+		</div>
+		<div class="left"></div>
+		<div class="right"></div>
+	</div>
+	<div class="flex_box">
+		<div class="left"></div>
+		<div class="middle"></div>
+		<div class="right"></div>
+	</div>
+</body>
+</html>
+background-size 规定背景图片的尺寸
+background-clip  
+background-orign  规定背景图片的定位区域
+背景图片可以放置于 content-box、padding-box 或 border-box 区域。
+background-clip:content
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

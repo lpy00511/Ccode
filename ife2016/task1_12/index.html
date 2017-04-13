@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>css3新特性</title>
+	<style type="text/css">
+		.table1{
+			border-collapse: collapse;
+			border: 1px solid #FFF;
+		}
+		.table1 .table_title th{
+			background-color: black;
+			color: #fff;
+		}
+		.top_3{
+			color: red;
+		}
+		.table1 tr:nth-child(even) td{
+			background: #fff;
+		}
+		.table1 tr:nth-child(odd) td{
+			background-color: #aaa;
+		}
+		.input_01{
+		    margin:60px; 
+			width: 100px;
+			height: 15px;
+			display: block;
+			transition:width 0.8s;
+		}
+		.input_01:focus{
+			width: 200px;
+		}
+		.labels a:link,.labels a:hover,.labels a:visited{
+			color: #ccc;
+			text-decoration: none;
+		}
+		.slides {
+			position: relative;
+			width: 1100px;
+			height: 550px;
+			overflow: hidden;
+			background-color: #ccc;
+		}
+		.slide-wrap{
+			position: relative;
+			width: 500%;
+			height: 100%;
+			transition:left .8s ease;
+			background-color: #a1a1a1;
+		}
+		.slide{
+			float: left;
+			width: 20%;
+			height: 100%;
+		}
+		.slide:first-child{
+			background-image: url("css/1488272610798.jpg");
+		}
+		.slide:nth-child(2){
+			background-image: url("css/1488272610798 (1).jpg");
+		}
+		.slide:nth-child(3){
+			background-image: url("css/1488272610798 (2).jpg");
+		}
+		.slide:nth-child(4){
+			background-image: url("css/1488272610798 (3).jpg");
+		}
+		.slide:nth-child(5){
+			background-image: url("css/1488272610798 (4).jpg");
+		}
+		#slide1:target ~ .slide-wrap{
+			left: 0;
+		}
+		#slide2:target ~ .slide-wrap{
+			left: -100%;
+		}
+		#slide3:target ~ .slide-wrap{
+			left: -200%;
+		}
+		#slide4:target ~ .slide-wrap{
+			left: -300%;
+		}
+		#slide5:target ~ .slide-wrap{
+			left: -400%;
+		}
+		.labels{
+			position: absolute;
+			right: 0;
+			bottom: 0;
+		}
+		.labels a{
+			display: block;
+			width: 30px;
+			height: 30px;
+			float: left;
+			line-height: 30px;
+			text-align: center;
+			background-color: rgba(0,0,0,.2);
+			border:1px solid transparent;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<table class="table1">
+			<tr class="table_title"><th>排名</th><th>网站</th><th>热度</th></tr>
+			<tr class="top_3"><td>1</td><td>百度前端技术学院</td><td>13000</td></tr>
+			<tr class="top_3"><td>2</td><td>百度前端技术学院</td><td>12000</td></tr>
+			<tr class="top_3"><td>3</td><td>百度前端技术学院</td><td>11000</td></tr>
+			<tr><td>4</td><td>百度前端技术学院</td><td>10000</td></tr>
+			<tr><td>5</td><td>百度前端技术学院</td><td>9000</td></tr>
+			<tr><td>6</td><td>百度前端技术学院</td><td>8000</td></tr>
+			<tr><td>7</td><td>百度前端技术学院</td><td>7000</td></tr>
+			<tr><td>8</td><td>百度前端技术学院</td><td>6000</td></tr>
+			<tr><td>9</td><td>百度前端技术学院</td><td>5000</td></tr>
+			<tr><td>10</td><td>百度前端技术学院</td><td>4000</td></tr>
+		</table>
+	</div>
+	<div>
+		<input class="input_01" type="text" />
+	</div>
+	<div class="slides">
+		<span id="slide1" hidden></span>
+		<span id="slide2" hidden></span>
+		<span id="slide3" hidden></span>
+		<span id="slide4" hidden></span>
+		<span id="slide5" hidden></span>
+		<div class="slide-wrap">
+			<div class="slide"></div>
+			<div class="slide"></div>
+			<div class="slide"></div>
+			<div class="slide"></div>
+			<div class="slide"></div>
+		</div>
+		<div class="labels">
+			<a href="#slide1">1</a>
+			<a href="#slide2">2</a>
+			<a href="#slide3">3</a>
+			<a href="#slide4">4</a>
+			<a href="#slide5">5</a>
+		</div>
+	</div>
+	
+</body>
+</html>
+
+
+
+
+
+
+

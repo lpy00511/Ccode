@@ -1,0 +1,121 @@
+<!-- 
+	vue 的class 与style绑定部分，组件
+ -->
+<!DOCTYPE <html>
+<head>
+	<title>class与style绑定</title>
+	<style type="text/css">
+		.static{
+			border:2px solid rgba(156,217,71,1);
+		}
+		.active{
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+			margin: 10px;
+		}
+		.text-danger{
+			box-shadow: 4px 4px 10px 5px #888;
+		}
+	</style>
+	<script type="text/javascript" src="vue.js"></script>
+</head>
+<body>
+	<div id="app1">
+		<div class="static" v-bind:class = "{active:isActive, 'text-danger':hasError}"></div>
+	</div>
+<div id="app2">
+	<div v-bind:class="classObject"></div>
+</div>
+<div id="app3">
+	<div :class="classObject">123</div>
+</div>
+<!-- 可以把一个数组传给v-bind:class,以应用一个class列表 -->
+<div id="app4">
+	<div :class="[isActive?activeClass:'', errorClass]"></div>
+</div>
+<div id="app5">
+	<my-component :class="{active:isActive}"></my-component>
+</div>
+<div id="app6">
+	<parent-component>
+    </parent-component>
+</div>
+</body>
+<script type="text/javascript">
+	var vm1 = new Vue({
+		el:'#app1',
+		data:{
+			isActive:true,
+			hasError:false
+		}
+	})
+	var vm2 = new Vue({
+		el:'#app2',
+		data:{
+			classObject:{
+				active:true,
+				'text-danger':false
+			}
+		}
+	})
+	var vm3 = new Vue({
+		el:'#app3',
+		data:{
+			isActive:true,
+			error:null
+		},
+		computed:{
+			classObject:function(){
+				return {
+					active:this.isActive && !this.error,
+					'text-danger':this.error && this.error.type === 'fatal'
+				}
+			}
+		}
+	})
+	var vm4 = new Vue({
+		el:'#app4',
+		data:{
+			isActive:true,
+			activeClass:'active',
+			errorClass:'text-danger'
+		}
+	})
+	var myComponent = Vue.extend({
+            template: '<div>This is my first component!</div>'
+    })
+    // 2.注册组件，并指定组件的标签，组件的HTML标签为<my-component>
+    var app5 = new Vue({
+        el: '#app5',
+        data:{
+        	isActive:true
+        },
+        components:{
+        	'my-component':myComponent
+       	}
+    })
+   	var Child = Vue.extend({
+            template: '<p>This is a child component!</p>'
+        })
+    var rChild = Vue.extend({
+    	template:'<p>this is the second child</p>'
+    })
+        var Parent = Vue.extend({
+            // 在Parent组件内使用<child-component>标签
+            template :'<div><p>This is a Parent component</p><child-component></child-component><rchild-component></rchild-component></div>',
+            components: {
+                // 局部注册Child组件，该组件只能在Parent组件内使用
+                'child-component': Child,
+                'rchild-component':rChild
+            }
+        })
+        
+        // 全局注册Parent组件
+        Vue.component('parent-component', Parent)
+        
+        new Vue({
+            el: '#app6'
+        })
+</script>
+</html>

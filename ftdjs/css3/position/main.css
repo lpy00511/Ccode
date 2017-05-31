@@ -1,0 +1,66 @@
+.container {
+	width: 200px;
+	height: 200px;
+	position: relative;
+	background-color: #AAA;
+}
+.container a{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	height: 50px;
+	width: 200px;
+	padding: 10px;
+	background-color: pink;
+}
+.container em{
+	font-size: 18px;
+	padding-bottom: 5px;
+	margin: 10px;
+}
+.container .p1{
+	position: absolute;
+	right: 0;x;
+	bottom: 20px;
+}
+.container span{
+	position: absolute;
+	 right: 0px;
+	 bottom: 0px;
+	height: 50px;
+}
+.container2 {
+	width: 200px;
+	height: 200px;
+	position: relative;
+	top: 10px;
+	background-color: blue;
+}
+.container2 .myclass{
+	width: 50px;
+	height: 50px;
+	position: relative;
+	top: 20px;
+	left: 20px;
+	float: right;/*相对定位元素，与float可以合用，
+	并且会脱离文档流*/
+	background-color: pink;
+
+}
+.container2 .yourclass{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 100px;
+	left: 20px;
+	background-color: yellow;
+
+}
+.container3 {
+	position: absolute;
+	top: 200px;
+	left: 400px;
+	bottom: 200px;
+	right: 100px;
+	background-color: #AAA;
+}

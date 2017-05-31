@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body style="background-color: #aaa">
+	<div>
+		<div id="window_name">window.name:<strong></strong></div>
+		<div id="top_name">top.name:<strong></strong></div>
+		<div id="parent_name">parent.name:<strong></strong></div>
+	</div>
+	<script type="text/javascript">
+		var id1 = document.getElementById("window_name");
+		var id2 = document.getElementById("top_name");
+		var id3 = document.getElementById("parent_name");
+		 id1.getElementsByTagName("strong")[0].innerHTML = window.name;
+		// id2.getElementsByTagName("strong")[0].innerHTML = window.top;
+		// id3.getElementsByTagName("strong")[0].innerHTML = window.parent;
+	</script>
+</body>
+</html>

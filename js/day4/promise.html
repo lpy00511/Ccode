@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>promise test</title>
+	<meta charset="utf-8" >
+</head>
+<body>
+</body>
+<script type="text/javascript">
+	function fn1(){
+		var p = new Promise((done) => {
+			setTimeout(function(){
+			console.info("this is 1");
+			done();//执行完成的回调
+			},2000);
+			
+		});	
+		return p;
+	}
+	function fn2(){
+		var p= new Promise((done) => {
+			console.info("this is 2");
+			done();//执行完成的回调
+			
+		});	
+		return p;
+	}
+	function fn3(){
+		var p = new Promise((done) => {
+			console.info("this is 3");
+			done();//执行完成的回调
+		});	
+		return p;
+	}
+	//fn1().then(fn2).then(fn3);
+	var DOMScript = document.createElement("script");
+	DOMScript.setAttribute("type","text/javascript");
+	DOMScript.src = "es6.js";
+	DOMScript.onloadDone = false;
+	DOMScript.onload = function(){
+		DOMScript.onloadDone = true;
+		init();
+	}
+	DOMScript.onreadystatechange = function(){
+		if(DOMScript.readyState === 2 || DOMScript.readyState === 4 && !DOMScript.onloadDone){
+			DOMScript.onloadDone = true;
+			init();
+		}
+	}
+	document.getElementsByTagName("head")[0].appendChild(DOMScript);
+	function init(){
+		console.log("兼容");
+	}
+
+</script>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>轮播图实现</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+		
+</head>
+<body>
+	<div class="css_box" id="js_box">
+		<div class="slider">
+			<div class="bx_wrapper" id="bx_wrapper">
+				<div class = "item"><a href="#"><img src="css/images/1.jpg"></a></div>
+				<div class = "item"><a href="#"><img src="css/images/2.jpg"></a></div>
+				<div class = "item"><a href="#"><img src="css/images/3.jpg"></a></div>
+				<div class = "item"><a href="#"><img src="css/images/4.jpg"></a></div>
+				<div class = "item"><a href="#"><img src="css/images/5.jpg"></a></div>
+			</div>
+		</div>
+		<!--控制移动的按钮-->
+		<div class="slider_ctrl" id="slider_ctrl">
+			<input type="button"  value="click me" id = "next" />
+		</div>
+	</div>
+<script>
+		var btn = document.getElementById("next");
+		var dom = document.getElementById("bx_wrapper");
+		var count = dom.getElementsByTagName("div");
+		var curWidth = 1100;
+		var bgWidth = curWidth*count.length;
+		var show=[];
+		var circle = [];
+		var goAway = "translate(-"+curWidth+"px,0), translateZ(0px)";
+		var goIn = "translate(0,0) translateZ(0px)";
+		var goPre = "translate("+curWidth+"px,0) translateZ(0px)";
+		dom.style.width = bgWidth+"px";
+		for(var i = 0, len = count.length; i < len; i++){
+			var cur_count = count[i];
+
+			cur_count.setAttribute("data-index", i);
+			cur_count.style.width = curWidth+"px";
+
+			if(i==0){
+				cur_count.style.left = 0;
+				show.push(cur_count);
+			}
+			else{
+				cur_count.style.left = -curWidth*i +"px";
+				if(i > 1){
+					translate(cur_count,goAway,'');
+					circle.push(cur_count);    //3,4,5
+				}
+				else{
+					show.push(cur_count);
+					translate(cur_count,goPre,'');
+				}
+			}
+		}
+		circle.reverse();  //5,4,3
+		btn.onclick = function(){
+			/*已展示的图片*/
+			var showFirst = show.shift();
+			translate(showFirst,goAway,"300ms");
+			/*正在展示的图片*/
+			translate(show[0], goIn, "300ms");
+			circle.splice(0,0, showFirst);
+
+			/*准备下一个要展示的图片*/
+			var nextPre = circle.pop();
+			translate(nextPre, goPre, "0ms");
+			show.push(nextPre); 
+		};
+		function translate(dom, goType, time){
+			dom.style.transform = dom.style.webkitTransform=dom.style.mozTransform = dom.style.msTransform = goType;
+			dom.style.transitonDuration = dom.style.transitonDuration=dom.style.transitonDuration = dom.style.transitonDuration = time;
+
+		}
+
+	</script>
+</body>
+</html>

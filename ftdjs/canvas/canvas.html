@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>canvas</title>
+	<script type="text/javascript">
+	function draw(){
+		var canvas = document.getElementById('tutorial');
+		if(canvas.getContext){
+			var ctx = canvas.getContext('2d');
+			// ctx.fillStyle = "rgb(200,0,0)";
+			// ctx.fillRect(10,10,55,50);
+			// ctx.fillStyle = "rgba(0,0,200,0.5)";
+			// ctx.fillRect(30,30,55,50);
+			//矩形
+			// ctx.fillRect(25,25,100,100);
+			// ctx.clearRect(45,45,60,60);
+			// ctx.strokeRect(50,50,50,50);
+			//路径
+			// ctx.beginPath();
+			// ctx.moveTo(75,50);
+			// ctx.lineTo(100,7 5);
+			// ctx.lineTo(100,25);
+			//笑脸
+			// ctx.fill();
+			// ctx.beginPath();
+			// ctx.arc(75,75,50,0,Math.PI*2,true);
+			// ctx.moveTo(110,75);
+			// ctx.arc(75,75,35,0,Math.PI,false);
+			// ctx.moveTo(65,65);
+			// ctx.arc(60,65,5,0,Math.PI*2,true);
+			// ctx.moveTo(95,65);
+			// ctx.arc(90,65,5,0,Math.PI*2,true);
+			// ctx.stroke();
+			//两个三角形
+			// ctx.beginPath();
+			// ctx.moveTo(25,25);
+			// ctx.lineTo(105,25);
+			// ctx.lineTo(25,105);
+			// ctx.fill();
+			// ctx.beginPath();
+			// ctx.moveTo(125,125);
+			// ctx.lineTo(125,45);
+			// ctx.lineTo(45,125);
+			// ctx.closePath();
+			// ctx.stroke();
+			//一堆
+			// for(var i = 0; i < 4;i++){
+			// 	for(var j = 0; j < 3; j++){
+			// 		ctx.beginPath();
+			// 		var x = 25+j*50;
+			// 		var y = 25+i*50;
+			// 		var radius = 20;
+			// 		var startAngle = 0;
+			// 		var endAngle = Math.PI+(Math.PI*j)/2;
+			// 		var anticlockwise = i%2 == 0?false:true;
+			// 		ctx.arc(x,y,radius,startAngle,endAngle,anticlockwise);
+			// 		if(i > 1){
+			// 			ctx.fill();
+			// 		}else{
+			// 			ctx.stroke();
+			// 		}
+			// 	}
+			// }
+			//贝塞尔曲线渲染对话气泡
+			// ctx.beginPath();
+			// ctx.moveTo(75,25);
+			// ctx.quadraticCurveTo(25,25,25,62.5);
+			// ctx.quadraticCurveTo(25,100,50,100);
+			// ctx.quadraticCurveTo(50,120,30,125);
+			// ctx.quadraticCurveTo(60,120,65,100);
+			// ctx.quadraticCurveTo(125,100,125,62.5);
+			// ctx.quadraticCurveTo(125,25,75,25);
+			// ctx.stroke();
+			//贝塞尔二次曲线实现心形
+			// ctx.beginPath();
+			// ctx.moveTo(75,40);
+			// ctx.bezierCurveTo(75,37,70,25,50,25);
+			// ctx.bezierCurveTo(20,23,22,62.5,22,62.5);
+			// ctx.bezierCurveTo(25,80,40,100,75,120);
+			// ctx.bezierCurveTo(110,100,125,80,128,62.5);
+			// ctx.bezierCurveTo(128,62.5,130,23,100,25);
+			// ctx.bezierCurveTo(80,25,75,37,75,40);
+			// ctx.fill();
+			//复杂一点的实现游戏的一个图形
+			roundedRect(ctx,12,12,150,150,15);
+			roundedRect(ctx,19,19,150,150,9);
+			roundedRect(ctx,53,53,49,33,10);
+		    roundedRect(ctx,53,119,49,16,6);
+		    roundedRect(ctx,135,53,49,33,10);
+		    roundedRect(ctx,135,119,25,49,10);
+		    ctx.beginPath();
+		    ctx.arc(37,37,13,Math.PI/7,-Math.PI/7,false);
+		    ctx.lineTo(31,37);
+		    ctx.closePath();
+		    ctx.fill();
+		    for(var i = 0; i < 8; i++){
+		    	ctx.fillRect(51+i*16,35,4,4);
+		    }
+		    for(i = 0; i < 6; i++){
+		    	ctx.fillRect(115,51+i*16,4,4);
+		    }
+		    for(i = 0; i < 8;i++){
+		    	ctx.fillRect(51+i*16,99,4,4);
+		    }
+
+		    ctx.beginPath();
+		    ctx.moveTo(83,116);
+		    ctx.lineTo(83,102);
+		    ctx.arc(97,102,14,Math.PI,0,false);
+		    ctx.lineTo(111,116);
+		    ctx.lineTo(107,111);
+		    ctx.lineTo(102,116);
+		    ctx.lineTo(97,111);
+		    ctx.lineTo(92,116);
+		    ctx.lineTo(87,111);
+		    ctx.lineTo(83,116);
+		    ctx.fill();
+		    ctx.fillStyle = "white";
+		    ctx.beginPath();
+		    ctx.moveTo(91,96);
+		    ctx.bezierCurveTo(88,96,87,99,87,101);
+		    ctx.bezierCurveTo(87,103,88,106,91,106);
+		    ctx.bezierCurveTo(94,106,95,103,95,101);
+		    ctx.bezierCurveTo(95,99,94,96,91,96);
+		    ctx.moveTo(103,96);
+		    ctx.bezierCurveTo(100,96,99,99,99,101);
+		    ctx.bezierCurveTo(99,103,100,106,103,106);
+		    ctx.bezierCurveTo(106,106,107,103,107,101);
+		    ctx.bezierCurveTo(107,99,106,96,103,96);
+		    ctx.fill();
+		    ctx.fillStyle = "black";
+		    ctx.beginPath();
+		    ctx.moveTo(91,101);
+		    ctx.arc(91,101,2,0,Math.PI*2);
+		    ctx.moveTo(102,101);
+		    ctx.arc(103,101,2,0,Math.PI*2);
+		    ctx.fill();
+	    }
+	    var cmp = document.getElementById("tutorial1").getContext("2d");
+	    cmp.fillStyle = '#FD0';
+	    cmp.fillRect(0,0,100,100);
+	    cmp.fillStyle = '#6C0';
+	    cmp.fillRect(100,0,100,100);
+	    cmp.fillStyle = '#09F';
+	    cmp.fillRect(0,100,100,100);
+	    cmp.fillStyle = '#F30';
+	    cmp.fillRect(100,100,100,100);
+	    cmp.fillStyle = '#FFF';
+	    cmp.globalAlpha = 0.2;
+	    for(var i = 0; i < 7; i++){
+	    	cmp.beginPath();
+	    	cmp.arc(100,100,10+15*i,0,Math.PI*2,true);
+	    	cmp.fill();
+	    }
+	    var ctx2 = document.getElementById("tutorial2").getContext("2d");
+	    ctx2.fillStyle = 'rgb(255,221,0)';
+	    ctx2.fillRect(0,0,200,50);
+	    ctx2.fillStyle = 'rgb(102,204,0)';
+	    ctx2.fillRect(0,50,200,50);
+	    ctx2.fillStyle = 'rgb(0,153,255)';
+	    ctx2.fillRect(0,100,200,50);
+	    ctx2.fillStyle = 'rgb(255,51,0)';
+	    ctx2.fillRect(0,150,200,50);
+	    for(var j = 0; j < 4; j++){
+		    for(var i = 0; i < 10; i++){
+		    	ctx2.fillStyle = 'rgba(255,255,255,'+(i+1)/10+')';
+		    	ctx2.fillRect(5+19*i,5+j*50,19,40);
+		    }
+		}
+		var ctx3 = document.getElementById("tutorial3").getContext("2d");
+		for(var i = 0; i < 10; i++){
+			ctx3.lineWidth = 1+i;
+			ctx3.beginPath();
+			ctx3.moveTo(5+i*14,5);
+			ctx3.lineTo(5+i*14,190);
+			ctx3.stroke();
+		}
+		//线性颜色渐变
+		var ctx4 = document.getElementById("tutorial4").getContext("2d");
+		var lineargradient = ctx4.createLinearGradient(0,100,0,200);
+		lineargradient.addColorStop(0,'red');
+		lineargradient.addColorStop(1,'pink');
+		ctx4.fillStyle = '#ff0000';
+		ctx4.fillRect(0,0,200,100);
+		ctx4.fillStyle = lineargradient;
+		ctx4.fillRect(0,100,200,100);
+		//圆形颜色渐变
+		var ctx5 = document.getElementById("tutorial5").getContext("2d");
+		var radgrad = ctx5.createRadialGradient(45,45,10,52,50,30);
+		radgrad.addColorStop(0,'#A7D30C');
+		radgrad.addColorStop(0.9,'#019F62');
+		radgrad.addColorStop(1,'rgba(1,159,98,0)');
+		var radgrad1 = ctx5.createRadialGradient(105,105,20,112,120,50);
+		radgrad1.addColorStop(0,'#FF5F98');
+		radgrad1.addColorStop(0.75,'#FF0188');
+		radgrad1.addColorStop(1,'rgba(255,1,136,0)');
+		ctx5.fillStyle = radgrad;
+		ctx5.fillRect(0,0,200,200);
+		ctx5.fillStyle = radgrad1;
+		ctx5.fillRect(0,0,200,200);
+		//绘制表盘
+		var ctx6 = document.getElementById("tutorial6").getContext("2d");
+		ctx6.beginPath();
+		ctx6.arc(100,100,99,0,Math.PI*2,false);
+		ctx6.moveTo(194,100);
+		ctx6.arc(100,100,94,0,Math.PI*2,false);
+		//变换原点
+		ctx6.translate(100,100);
+		ctx6.rotate(Math.PI/180*45);
+		console.log("%20d",Math.PI/180*180);
+		ctx6.moveTo(0,0);
+		ctx6.lineTo(0,-85);
+		ctx6.moveTo(0,0);
+		ctx6.lineTo(-65,0);
+		// ctx6.moveTo(100,100);
+		// ctx6.lineTo(100,190);
+		ctx6.stroke();
+		//添加文字
+		ctx6.font = "bold 14px Arial";
+		ctx6.textAlign = "center";
+		ctx6.testBaseline = "middle";
+		ctx6.fillText("12",0,-85);
+		ctx6.fillText("9",-85,0);
+		var ctx7 = document.getElementById("tutorial7").getContext("2d");
+		ctx7.fillStyle = "#ff0000";
+		ctx7.save();
+		ctx7.fillStyle = "#00ff00";
+		ctx7.translate(100,100);
+		ctx7.save();
+		ctx7.fillStyle = "#00D0ff";
+		ctx7.fillRect(0,0,100,200);
+		// ctx7.restore();
+		// ctx7.fillRect(10,10,100,200);
+		// ctx7.restore();
+		// ctx7.fillRect(0,0,100,200);
+	}
+	function roundedRect(ctx,x,y,width,height,radius){
+		ctx.beginPath();
+		ctx.moveTo(x,y+radius);
+		ctx.lineTo(x,y+height-radius);
+		ctx.quadraticCurveTo(x,y+height,x+radius,y+height);
+		ctx.lineTo(x+width-radius,y+height);
+		ctx.quadraticCurveTo(x+width,y+height,x+width,y+height-radius);
+		ctx.lineTo(x+width,y+radius);
+		ctx.quadraticCurveTo(x+width,y,x+width-radius,y);
+		ctx.lineTo(x+radius,y);
+		ctx.quadraticCurveTo(x,y,x,y+radius);
+		ctx.stroke();
+	}
+	</script>
+	<style type="text/css">
+		canvas{
+			border:1px solid black;
+		}
+		#tutorial6{
+			border:none;
+		}
+	</style>
+</head>
+<body onload="draw()">
+<canvas id="tutorial" width="200px" height="200px"></canvas>
+<canvas id="tutorial1" width="200px" height="200px"></canvas>
+<canvas id="tutorial2" width="200px" height="200px"></canvas>
+<canvas id="tutorial3" width="200px" height="200px"></canvas>
+<canvas id="tutorial4" width="200px" height="200px"></canvas>
+<canvas id="tutorial5" width="200px" height="200px"></canvas>
+<canvas id="tutorial6" width="200px" height="200px"></canvas>
+<canvas id="tutorial7" width="200px" height="200px"></canvas>
+</body>
+</html>

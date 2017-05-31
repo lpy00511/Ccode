@@ -1,0 +1,133 @@
+.title{
+	font-family:-apple-system,SF UI Display,Arial;
+}
+*,:after,:before{
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
+}
+.logo {
+	position: absolute;
+	top: 60px;
+	left: 30px;
+	font-size: 30px;
+}
+.logo a{
+	color: #FF6347;
+}
+.bg_sign{
+	height: 100%;
+	min-height: 750px;
+	text-align: center;
+	font-size: 14px;
+	background-color: #f1f1f1;
+}
+.loginPanel{
+	width: 400px;
+	height: 500px;
+	background-color: #FFF;
+	margin: 60px auto 0 auto;
+	padding: 50px 50px 30px 50px;
+	border: 1px solid #AAA;
+	display: inline-block;
+	vertical-align: middle;
+	border-radius: 3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	box-shadow:0px 0px 10px #AAA;
+	-moz-box-shadow:0px 0px 10px #AAA;
+	-webkit-box-shadow:0px 0px 10px #AAA;
+}
+.loginPanel .title{
+	font-size: 18px;
+    margin: 0 auto 50px;
+    padding: 10px;
+    font-weight: 400;
+    color: #969696;
+}
+a {
+	padding: 10px;
+	color: #969696;
+	cursor: pointer;
+	text-decoration: none;
+}
+.sign-input {
+	width: 100%;
+	height: 50px;
+	background-color: hsla(0,0%,71%,.1);
+	position: relative;
+}
+.sign-input input{
+	width: 100%;
+	height: 50px;
+	font-size: 15px;
+	padding:4px 12px 4px 35px;
+	background-color: transparent;
+	vertical-align: middle;
+	border-style: none;
+	border:1px solid #c8c8c8;
+}
+.restyle input{
+	border-bottom: none;
+}
+.input01 {
+	border-radius:4px 4px 0 0;
+	-moz-border-radius:4px 4px 0 0;
+	-webkit-border-radius:4px 4px 0 0;
+}
+.input02 {
+	border-radius: 0 0 4px 4px;
+	-moz-border-radius:0 0 4px 4px;
+	-webkit-border-radius:0 0 4px 4px;
+}
+.sign-input .icontop {
+	position: absolute;
+	top:16px;
+	left: 8px;
+	height: 20px;
+	width: 20px;
+	background: url(icon1.png) no-repeat;
+}
+.sign-input .iconbottom {
+	position: absolute;
+	top: 16px;
+	left: 8px;
+	height: 20px;
+	width: 20px;
+	background:url(icon2.png) no-repeat;
+}
+.sign-input input:focus{
+	border: 0px;
+	border-color: #c8c8c8;
+}
+
+.more_sign{
+	margin-top: 20px;
+}
+.more_sign h6{
+	position: relative;
+	margin-bottom: 20px;
+	font-size: 12px;
+	color: #b5b5b5;
+}
+.more_sign h6:before{
+	content: "";
+	border-top: 1px solid #969696;
+	display: block;
+	position: absolute;
+	width: 60px;
+	top: 5px;
+	left: 30px;
+}
+.more_sign h6:after{
+	content: "";
+	border-top: 1px solid #969696;
+	display: block;
+	position: absolute;
+	width: 60px;
+	top: 5px;
+	right: 30px;
+}
+
+
+

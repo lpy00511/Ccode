@@ -1,0 +1,16 @@
+.container {
+	background-color: #AAA;
+	width: 200px;
+	height: 400px;
+	margin: 100px auto;
+}
+.class1 {
+	width: 150px;
+	height: 80px;
+}
+.class2 {
+	width: 90px;
+	height: 40px;
+	background-color: green;
+	margin: 10px auto auto;
+}

@@ -1,0 +1,17 @@
+.css_box {
+	max-width: 100%;
+}
+.slider {
+	width: 1100px;
+	height: 550px;
+	position: relative;
+	margin: 20px auto;
+	overflow: hidden;
+}
+.bx_wrapper {
+	width: 1100px;
+	position: relative;
+	transition:left .5s ease;
+	left: 0px;
+}
+

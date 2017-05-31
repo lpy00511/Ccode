@@ -1,0 +1,44 @@
+<html>
+<head>
+	<title>positon的几个疑问</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+<!--
+	首先介绍position的属性，一共有五个，static, relative,absolute,fixed，inherit（继承父元素的样式）.
+	其中static是默认值，没有定位，元素出现在正常流中（会忽略top，bottom，left，right或者z-index）。
+	relative:生成相对定位元素，相对于其正常位置进行定位。(ps:疑问就是，为什么元素的包含块一般都设为relative？)
+	absolute：生成绝对定位元素，相对于第一个非static定位的父元素进行定位。
+	fixed:生成相对定位元素，相对于浏览器窗口进行定位。
+	后两种定位会通过top，bottom，left，right属性进行定位。
+	position 疑问一：任何元素都可以设定position吗？-->
+<div class="container">
+	<a href="#">前端 前端 前端 前端</a>
+	<em>text text text text text text text</em>
+	<em>text1 text1 text1 text1 text1 text1</em>
+	<p class="p1">前端 前端 前端 前端 前端前端</p>
+	<span>行内元素的position</span>
+</div>
+   <!--从上面的container可以看出
+   	 	(1)不论行内元素还是块级元素都具有positions属性。
+		(2)使用absolute定位的元素脱离正常流，并且不影响其他元素（与float相反）。
+		(3)当行内元素用absolute|fixed定位后，自动变为block元素，所以，再设置display：block无效。
+   	 		-->
+<div class="container2">
+	<div class="myclass"></div>
+	<span>前端前端 前端前端 前端前端</span>
+	<div class="yourclass"></div>
+</div>
+<!--从上面的container2可以看出：
+		（1）使用relative进行定位的元素，在文档流中依然保持着原有的默认位置，即使它作了偏移，周围的元素也不会占领的它原来的位置，基于这个特性，可以和float合用。
+		（2）使用fixed定位的元素，用法与absolute相似，但是包含块是浏览器的窗口。fixed定位元素不会随着页面的滚动而移动。
+	-->
+<div class="container3">
+	1111
+</div>
+<!--从上面的container3可以看出：
+		（1）使用absolute进行定位的元素，如果没有设置width和height，那么left和right将确定元素的width，top和bottom将确定元素的height。
+		（2）如果使用absolute进行定位的元素，如果设置了width和height，并且同时声明了top和bottom，那么top的优先级高于bottom，同时声明了left和right，就要取决于网页语言，在英文网页中，left的优先级高于right，在阿拉伯语的网页中，right优先于left。
+-->
+</body>
+</html>

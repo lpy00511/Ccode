@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>canvas 绘制二叉树</title>
+	<style type="text/css">
+		.container{
+			width: 800px;
+			height: 600px;
+			background-color: #aaa;
+			margin: auto;
+			text-align: center;
+		}
+		.construct{
+			margin: 50px auto;
+			text-align: center;
+		}
+		.intext{
+			width: 300px;
+			height: 20px;
+			padding: 10px 10px 10px 10px;
+		}
+		.text{
+			font: 18px arial;
+			margin: 6px 0 0 7px;
+			background: #fff;
+			border:1px solid #eee;
+			outline: 0;
+			box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+		}
+		#submit01{
+			width: 50px;
+			height: 40px;
+			font: 16px arial;
+			margin: 6px 0 0 7px;
+			background: #fff;
+			border:1px solid #eee;
+			outline: 0;
+			box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+		}
+		.submit{
+			font: 14px arial;
+			margin: 6px 0 0 7px;
+			background: #fff;
+			border:1px solid #eee;
+			outline: 0;
+			box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+		}
+		#show{
+			margin: 20px auto;
+		}
+		canvas{
+			border:1px solid black;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<div class="construct">
+		<label>请输入：</label>
+		<input id="tree" type="text" class="intext text" name="input01" value="" placeholder="整数以，隔开">
+		<button type="button" id="submit01">确定</button>
+	</div>
+	<div class="control">
+		<label>增加节点:</label><input class="text" type="text" id="add"><button id="addnode" class="submit">增加</button>
+		&nbsp;&nbsp;
+		<label>删除节点:</label><input class="text" type="text" id="delete"><button id="delnode" class="submit">删除</button>
+	</div>
+	<div id="show">
+		<canvas id="canvas" width="700px" height="400px">
+		</canvas>
+	</div>
+</div>
+</body>
+<script type="text/javascript">
+	function drawGrid(canvas_width,canvas_height, grid_width,grid_height){
+		var rows = parseInt(canvas_width/grid_width);
+		var cols = parseInt(canvas_height/grid_height);
+		for(var i = 0; i < rows; ++i){
+			for(var j = 0; j < cols; j++){
+				drawRect(i, j, grid_width,grid_height);
+				if(i == 0 || j == 0){
+					drawText(i,j,grid_width,grid_height); //增加坐标
+				}
+			}
+		}
+	}
+	//绘制横坐标与纵坐标
+	function drawText(i, j, grid_width,grid_height){
+		var drawing = document.getElementById("canvas");
+		if(!drawing.getContext) return false;
+		var context = drawing.getContext('2d');
+		context.font = 'bold 14px Arial';
+		context.textAlign = 'start';
+		var x_axis = i*50 +'';
+		var y_axis = j*50 + '';
+		context.fillText(x_axis,i*50,10);
+		context.fillText(y_axis,10,j*50);
+	}
+	function drawRect(i, j, grid_width){
+		var drawing = document.getElementById("canvas");
+		if(!drawing.getContext) return false;
+		var context = drawing.getContext('2d');
+		context.lineWidth = 1;
+		context.strokeStyle = 'lightgrey';
+		context.strokeRect(i*50,j*50,grid_width,grid_height);
+	}
+	var canvas_width = 800;
+	var canvas_height = 500;
+	var grid_width = 50;
+	var grid_height = 50;
+	drawGrid(canvas_width,canvas_height,grid_width,grid_height);
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

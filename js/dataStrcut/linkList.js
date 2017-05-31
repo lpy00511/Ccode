@@ -1,21 +1,15 @@
 function Node(elment){
 	this.elment = elment;
 	this.next = null;
+	console.log(this);
 }
 function Llist(){
 	this.head = new Node("head");
 	this.find = find;
 	this.insert = insert;
-	this.findPreious = findPreious;
+	this.findPrevious = findPrevious;
 	this.del = del;
 	this.display = display;
-}
-function find(item){
-	var currNode = this.head;
-	while(currNode.elment != item){
-		currNode = currNode.next;
-	}
-	return currNode;
 }
 function insert(newItem){
 	var newNode = new Node(newItem);
@@ -23,20 +17,26 @@ function insert(newItem){
 	newNode.next = currNode.next;
 	currNode.next = newNode;
 }
-function findPreious(item){
+function find(item){
 	var currNode = this.head;
+	while(currNode.next != null && currNode.elment != item){
+		currNode = currNode.next;
+	}
+	return currNode;
+}
+function findPrevious(item){
+	var currNode =  this.head;
 	while(currNode.next != null && currNode.next.elment != item){
 		currNode = currNode.next;
 	}
 	return currNode;
 }
 function del(item){
-	var preNode = this.findPreious(item);
-	var currNode = preNode.next;
-	
-
+	var preNode = this.findPrevious(item);
+	if(preNode.next != null){
+		preNode.next = preNode.next.next;
+	}
 }
-
 function display(){
 	var currNode = this.head;
 	var list = [];
@@ -47,11 +47,21 @@ function display(){
 	}
 	return list;
 }
-var citis = new Llist();
-citis.insert("1");
-citis.insert("2");
-citis.insert("3");
-citis.insert("4");
-console.log(citis.display());
-console.log(citis.find(1));
-console.log(citis.findPreious(2));
+var a = new Llist();
+a.insert("1");
+a.insert("2");
+a.insert("3");
+a.insert("4");
+console.log(a.find("1").elment);
+console.log(a.findPrevious("2").elment);
+console.log(a.display());
+a.del("2");
+console.log(a.display());
+function log(msg){
+	console.log.apply(this, arguments);
+}
+log(1,2,3);
+
+
+
+

@@ -1,0 +1,48 @@
+<!-- 
+表单控件绑定 
+ -->
+<!DOCTYPE <html>
+<head>
+	<title>表单控件绑</title>
+	<script type="text/javascript" src="vue.js"></script>
+</head>
+<body>
+	<div id="app1">
+		<input type="text" v-model.number="message">
+		<p>message is: {{ typeof message }}</p>
+	</div>
+	<div id="app2">
+		<span>Multiline message is:</span>
+		<p style="white-space: pre">{{message}}</p>
+		<textarea v-model.lazy="message" placeholder="add multiple lines">
+		</textarea>
+	</div>
+	<div id="app3">
+		<input type="checkbox" id="checkbox" v-model="checked">
+		<label if="checked">{{checked}}</label>
+	</div>
+	<div id="">
+		
+	</div>
+</body>
+	<script type="text/javascript">
+		var app1 = new Vue({
+			el:"#app1",
+			data:{
+				message:''
+			}
+		});
+		var app2 = new Vue({
+			el:'#app2',
+			data:{
+				message:''
+			}
+		});
+		new Vue({
+			el:"#app3",
+			data:{
+				checked:false
+			}
+		})
+	</script>
+</html>

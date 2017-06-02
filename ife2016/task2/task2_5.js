@@ -1,13 +1,3 @@
-/* 数据格式演示
-var aqiSourceData = {
-  "北京": {
-    "2016-01-01": 10,
-    "2016-01-02": 10,
-    "2016-01-03": 10,
-    "2016-01-04": 10
-  }
-};
-*/
 
 // 以下两个函数用于随机模拟生成测试数据
 function getDateStr(dat) {
@@ -74,11 +64,25 @@ function getWidth(width,len){
   posObj.offsetLeft = (width-posObj.left * (len-1) - posObj.width)/2;
   return posObj;
 }
-function getHintLfeft(){
-
+function getHintLfeft(posObj, i){
+    if (posObj.left * i + posObj.offsetLeft + posObj.width / 2 - 60 <= 0) {
+        return 5;
+    } else if (posObj.left * i + posObj.offsetLeft + posObj.width / 2 + 60 >= 1200) {
+        return (posObj.left * i + posObj.offsetLeft + posObj.width / 2 - 110);
+    } else  {
+        return (posObj.left * i + posObj.offsetLeft + posObj.width / 2 - 60);
+    }
 }
-function getTitle(){
 
+function getTitle(){
+  switch(pageState.nowGraTime){
+    case "day":
+      return "每日";
+    case "week":
+    return "周平均";
+    case "month":
+      return "月平均";
+  }
 }
 /**
  * 渲染图表
@@ -88,17 +92,15 @@ function renderChart() {
   var wrapper = document.getElementById("aqi-chart-wrap");
   var width = wrapper.clientWidth;
   var selectedData = chartData[pageState.nowGraTime][pageState.nowSelectCity];
-  //console.log(selectedData);
-  var len = Object.keys(selectedData).length;
-  console.log(len);
+  console.log(selectedData);
+  var len = Object.keys(selectedData).length;//日 90 周 16 月3
   var posObj = getWidth(width,len);
   innerHTML += "<div class='title'>"+pageState.nowSelectCity+"市01-03月"+getTitle()+"空气质量报告</div>";
   for(var key in selectedData){
-    innerHTML += "<div class='aqi-bar "+pageState.nowGraTime+"' style = 'height:"+selectedData[key]+
-    "px;width:"+posObj.width+"px;left:"+(posObj.left*i+posObj.offsetLeft)+"px;background-color:"+
-    colors[Math.floor(Math.random()*11)]+"></div>";
-    innerHTML += "<div class='aqi-hint' style='bottom:'"+(selectedData[key])+"></div>";
-  }
+    innerHTML += "<div class='aqi-bar " + pageState.nowGraTime + "' style='height:" + selectedData[key] + "px; width: " + posObj.width +"px; left:" + (posObj.left * i + posObj.offsetLeft) + "px; background-color:" + colors[Math.floor(Math.random() * 11)] + "'></div>"
+    innerHTML += "<div class='aqi-hint' style='bottom: " + (selectedData[key] + 10) + "px; left:" + getHintLfeft(posObj,i++) + "px'>" + key + "<br/> [AQI]: " + selectedData[key] + "</div>"
+    }
+  wrapper.innerHTML = innerHTML;
   
 }
 

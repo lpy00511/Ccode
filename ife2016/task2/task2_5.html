@@ -27,9 +27,10 @@
         left: 300px;
         width: 200px;
     }
+    
     #city-select {
         width: 10rem;
-        height: 3rem;
+        height: 2rem;
         padding: 0.1rem 0.4rem 0.1rem 0.4rem;
         vertical-align: middle;
         border: 1px solid #e9e9e9;
@@ -40,6 +41,86 @@
         font-size: 16px;
         color: #000099;
         cursor: pointer;
+    }
+    
+    #aqi-chart-wrap {
+        position: relative;
+        width: 1200px;
+        height: 600px;
+        margin: 50px auto;
+        box-shadow: 0px 0px 5px #999;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+    
+    @keyframes heightAnim {
+        0% {
+            bottom: -300px;
+        }
+        100% {
+            bottom: 0;
+        }
+    }
+    
+    .aqi-bar {
+        position: absolute;
+        bottom: 0;
+        cursor: pointer;
+        animation: heightAnim .5s ease-in-out;
+    }
+    
+    .aqi-hint {
+        position: absolute;
+        display: none;
+        width: 120px;
+        border: 1px solid #16324a;
+        background-color: white;
+        z-index: 999;
+        font-size: .75rem;
+        line-height: 20px;
+        text-align: center;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px #dddddd;
+        opacity: .8;
+    }
+    
+    label {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+    }
+    
+    label span {
+        display: block;
+        text-align: center;
+        line-height: 50px;
+        border: 1px solid #16324a;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    
+    label input {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
+    
+    .selected {
+        background-color: #16243a;
+        color: white;
+    }
+    
+    .show +div {
+        display: block;
+    }
+    
+    .title {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        top: 10px;
     }
     </style>
 </head>

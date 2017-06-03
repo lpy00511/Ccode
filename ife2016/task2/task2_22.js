@@ -9,16 +9,8 @@ function addEventHandler(element,type,handler){
 }
 var nodeArr=[];//将输入的节点转化成数组
 function getInputNode(){
-<<<<<<< HEAD
-	var btn = document.getElementsByName("insert");
-	addEventHandler(btn,'click',function(){
-		var nodeArr = document.getElementById("input-node").value;
-		console.log(nodeArr);
-	});
-=======
 	var btn = document.getElementById("submit1");
 	addEventHandler(btn,"click",Handler);
->>>>>>> fca95f2329826911586ec39d17ad7b7ff84a4b50
 }
 var Handler= function(){
   var text = document.getElementById("input-node").value;

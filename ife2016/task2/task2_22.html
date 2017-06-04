@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>javascript 实现树</title>
-    
     <style type="text/css">
-    *{
-    	border:0;
-    	padding: 0;
-    	margin: 0;
+    * {
+        border: 0;
+        padding: 0;
+        margin: 0;
     }
-    #node{
-    	position: relative;
-    	left: 250px;
-    	top: 50px;
-    	display: inline-block;
+    
+    #node {
+        position: relative;
+        left: 250px;
+        top: 50px;
+        display: inline-block;
     }
-    #node #input-node{
-    	height: 30px;
-    	width: 200px;
-    	margin-bottom: 10px;
-    	border-radius: 8px;
-    	box-shadow: inset 0 0 5px #aaa;
-    	outline: none;
+    
+    #node #input-node {
+        height: 30px;
+        width: 200px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        box-shadow: inset 0 0 5px #aaa;
+        outline: none;
     }
-    .insert{
-    	height: 30px;
-		width: 100px;
-		border-radius: 8px;
-    	box-shadow: inset 0 0 5px #aaa;
-    	outline: none;
+    
+    .insert {
+        height: 30px;
+        width: 100px;
+        border-radius: 8px;
+        box-shadow: inset 0 0 5px #aaa;
+        outline: none;
     }
+    
     #select {
         position: relative;
         left: 500px;
@@ -71,15 +75,79 @@
         border-radius: 15px;
         overflow: hidden;
     }
+    .circle {
+        position: absolute;
+        top: 48px;
+        left: 475px;
+        border: 1px solid black;
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+    }
+    
+    .left-line {
+        position: absolute;
+        top: 100px;
+        left: 350px;
+        width: 150px;
+        height: 50px;
+    }
+    .left-line:before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        border-bottom: 50px solid black;
+        border-left: 150px solid transparent;
+        content: "";
+    }
+    .left-line:after {
+        position: absolute;
+        top: 1;
+        right: 0;
+        left: 1;
+        bottom: 0;
+        border-bottom: 49px solid white;
+        border-left: 149px solid transparent;
+        content: "";
+    }
+    .right-line {
+        position: absolute;
+        top: 100px;
+        left: 500px;
+        width: 150px;
+        height: 50px;
+    }
+    .right-line:before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        border-bottom: 50px solid black;
+        border-right: 150px solid transparent;
+        content: "";
+    }
+    .right-line:after {
+        position: absolute;
+        top: 1;
+        right: 1;
+        left: 0;
+        bottom: 0;
+        border-bottom: 49px solid white;
+        border-right: 149px solid transparent;
+        content: "";
+    }
     </style>
 </head>
 
 <body>
-	<div id="node">
-		<span>输入树的节点</span>
-		<input type="text" placeholder="1,2,3" name="input-node" id="input-node"/>
-		<input type="submit" name="insert" value="插入" id="submit1" class="insert" />
-	</div>
+    <div id="node">
+        <span>输入树的节点</span>
+        <input type="text" placeholder="1,2,3" name="input-node" id="input-node" />
+        <input type="submit" name="insert" value="插入" id="submit1" class="insert" />
+    </div>
     <div id="select">
         <label>
             <span>前序</span>
@@ -95,7 +163,14 @@
         </label>
     </div>
     <div id="chart-wrap">
+        <div class="circle">
+        </div>
+        <div class="left-line">
+        </div>
+         <div class="right-line">
+        </div>
     </div>
 </body>
-<script type="text/javascript" src="task2_22.js"></script>
+<script type="text/javascript" src="task2_22_1.js"></script>
+
 </html>

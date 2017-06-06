@@ -28,7 +28,7 @@ function convertImageToCanvas(){
   img.onload = function(){
     ctx.drawImage(img,0,0);
   }
-  img.src="image/bg.png";
+  img.src="../image/bg.png";
 }
 function draw(){
   var canvas = document.getElementById("Btree");

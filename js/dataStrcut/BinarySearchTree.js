@@ -6,6 +6,7 @@ function BinarySearchTree(){
 		this.key = key;
 		this.left = null;
 		this.right = null;
+		this.parent = null;
 	};
 	var root = null;
 	this.insert = function(key){
@@ -34,6 +35,15 @@ function BinarySearchTree(){
 	this.search = function(key){
 		return searchNode(root,key); //查找树的给定值
 	};
+	this.searchL = function(){
+		return searchNodeL(root);
+	};
+	this.searchR = function(){
+		return searchNodeR(root);
+	};
+	this.searchP = function(key){
+		return searchNodeP(root,key);
+	};
 }
 /*
 *我们实现的方法包括：
@@ -48,14 +58,16 @@ remove(key):从树中移除某个键
 */
 var insertNode = function(node,newNode){
 	if(newNode.key < node.key){
-		if(node.left == null){
+		if(node.left){
 			node.left = newNode;
+			newNode.parent = node;
 		}else{
 			insertNode(node.left,newNode);
 		}
 	}else{
-		if(node.right == null){
+		if(node.right){
 			node.right = newNode;
+			newNode.parent = node;
 		}else{
 			insertNode(node.right,newNode);
 		}
@@ -111,5 +123,28 @@ function searchNode(node,key){
 	}else{
 		return true;
 	}
+}
+function searchNodeL(node){
+	if(node == null){
+		return false;
+	}
+	if(node.left == null){
+		return false;
+	}else {
+		return true;
+	}
+}
+function searchNodeR(node){
+	if(node == null){
+		return false;
+	}
+	if(node.right == null){
+		return false;
+	}else {
+		return true;
+	}
+}
+function searchNodeP(node,key){
+
 }
 module.exports = BinarySearchTree;

@@ -10,8 +10,6 @@ function addEventHandler(element, type, handler) {
 
 var nodeArr = [11, 7, 15, 5, 9, 13, 20, 3, 8, 10, 12, 14, 25];
 
-
-
 require(['BinarySearchTree'], function() {
 
     var tree = new BinarySearchTree();
@@ -22,6 +20,7 @@ require(['BinarySearchTree'], function() {
         this.floor = 0;
         this.drawleft = false;
         this.drawright = false;
+        this.struct=null;
     }
     var objArr = [];
     for(var i = 0; i < nodeArr.length; i++) {
@@ -30,7 +29,6 @@ require(['BinarySearchTree'], function() {
     }
     var tree1 = document.getElementById("chart-wrap");
     var maxfloor = objArr[0].floor;
-    console.log(maxfloor);
 
     function draw(node) {
         var node_top = document.createElement("div");
@@ -84,7 +82,7 @@ require(['BinarySearchTree'], function() {
             right_line.style.left = -75 + 'px';
             right_line.style.top = -51+ 'px';
         }
-        
+        node_top.style.backgroundColor = '#fff';
         tree1.appendChild(node_top);
         var innerspan = document.createElement("span");
         innerspan.className = "text";
@@ -92,7 +90,7 @@ require(['BinarySearchTree'], function() {
         node_top.appendChild(innerspan);
         node_top.appendChild(left_line);
         node_top.appendChild(right_line);
-        node.strcut = node_top;
+        node.struct = node_top;
     }
     //想把draw作为callback 函数，这样遍历的时候将树画出来
     tree.drawTree(draw);
@@ -101,7 +99,7 @@ require(['BinarySearchTree'], function() {
     // 树的遍历 （2）先序遍历
     // tree.preOrderTraverse(printNode);
     // 输的遍历（3）后序遍历
-   tree.postOrderTraverse(draw);
+    //tree.postOrderTraverse(draw);
     var preBtn = document.getElementById("preorder");
     var inBtn = document.getElementsByName("inorder");
     var postBtn = document.getElementsByName("postorder");
@@ -112,14 +110,14 @@ require(['BinarySearchTree'], function() {
     }
     function reset(){
         divList = [];
-        clearInterval(timer);
-        
+        clearInterval(timer); 
     }
     addEventHandler(preBtn,"click",function(){
-            reset();
+           // reset();
             tree.preOrderTraverse(printNode);
-            changeColor();
-            //console.log(divList);
+            changeColor(divList);
+            // for(var i =0; i < divList.length; i++)
+            // console.log(divList[i].struct.style);
     });
     addEventHandler(inBtn,"click",function(){
             reset();
@@ -132,24 +130,20 @@ require(['BinarySearchTree'], function() {
             changeColor();
     });
     function changeColor(node){
-            var j = 0;
-            //console.log(divList.length);
-            for(var i =0 ; i < divList.length; i++)
-            divList[i].strcut.style.backgroundColor = '#fff';
+            var i = 0;
+            divList[0].struct.style.backgroundColor = 'blue';
+            divList[1].struct.style.backgroundColor = 'blue';
             console.log(divList);
-            // for(j = 1; j < divList.length; j++){
-            //     timer = setInterval(function(argument){
-            //         divList[j-1].strcut.style.backgroundColor='#fff';
-            //         divList[j].struct.style.backgroundColor='blue';
-            //         //console.log(divList[i]);
-                    
-            //         //console.log(divList[divList.length-1]);
-            //     },500);
-            // }
-            clearTimeout(timer);
-            divList[divList.length-1].struct.style.backgroundColor='#fff';   
-            //console.log(divList);
-    } 
+            setInterval(function(argument){
+                i++;
+                if(i < divList.length){
+                    divList[i-1].strcut.style.backgroundColor='#fff';
+                    divList[i].struct.style.backgroundColor='blue';
+                }else {
+                    divList[divList.length-1].struct.backgroundColor='#fff';
+                }
+            },500);
+    }
 });
    
 

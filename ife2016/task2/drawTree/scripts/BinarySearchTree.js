@@ -27,8 +27,8 @@ function BinarySearchTree(){
 	this.max = function(){
 		return maxNode(root);  //查找树的最大值
 	};
-	this.search = function(node){
-		return searchNode(root,node); //查找树的给定值
+	this.search = function(node,callback){
+		return searchNode(root,node,callback); //查找树的给定值
 	};
 	this.searchL = function(){
 		return searchNodeL(root);
@@ -112,17 +112,19 @@ function maxNode(node){
 	}
 	return null;
 };
-function searchNode(node,node1){
-	if(node == null){
-		return false;
-	}
-	if(node1.key < node.key){
-		return searchNode(node.left,node1);
-	}else if(node1.key > node.key){
-		return searchNode(node.right,node1);
-	}else{
-		return true;
-	}
+var searchNode=function(node,node1,callback){
+	if(node){
+		if(node1.key < node.key){
+			callback(node);
+			searchNode(node.left,node1,callback);
+		}else if(node1.key > node.key){
+			callback(node);
+			searchNode(node.right,node1,callback);
+		}else{
+			callback(node);
+			return ;
+		}
+	}	
 };
 var createTree = function(node,callback){
 	if(node != null){
@@ -131,4 +133,6 @@ var createTree = function(node,callback){
 		createTree(node.right,callback);
 	}
 };
-
+var remove = function(){
+	
+}

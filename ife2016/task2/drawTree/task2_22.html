@@ -13,16 +13,18 @@
         line-height: 25px;
         vertical-align: baseline;
         box-sizing: border-box;
+        -ms-zoom: 1;
+        zoom:1;
     }
     
     #node {
         position: relative;
-        left: 300px;
-        top: 50px;
+        left: 250px;
+        top: 20px;
         display: inline-block;
     }
     
-    #node #input-node {
+    .input1 {
         height: 30px;
         width: 150px;
         margin-bottom: 10px;
@@ -37,11 +39,12 @@
         border-radius: 8px;
         box-shadow: inset 0 0 5px #aaa;
         outline: none;
+        cursor: pointer;
     }
     
     #select {
         position: relative;
-        left: 500px;
+        left: 600px;
         top: 50px;
         width: 500px;
         height: 50px;
@@ -208,16 +211,31 @@
         border-right: 100px solid transparent;
         content: "";
     }
+    #options{
+        position: absolute;
+        left: 250px;
+        top: 68px;
+    }
+    #search{
+        position: absolute;
+        top: 18px;
+        left: -300px;
+    }
     </style>
 </head>
 
 <body>
     <div id="node">
         <span>输入树的节点</span>
-        <input type="text" placeholder="1,2,3" name="input-node" id="input-node" />
+        <input type="text" placeholder="66" name="input-node" id="input-node" class="input1" />
         <input type="submit" name="insert" value="插入" id="submit1" class="insert" />
     </div>
     <div id="select">
+        <div id="search">
+            <span>查找</span>
+            <input type="text" name="search_node" id="searchANode" class="input1">
+            <input type="submit" name="search_node" value="查找" id="searchNode" class="insert">
+        </div>
         <label>
             <span>前序</span>
             <input type="radio" name="left" id="preorder" value="left">
@@ -230,8 +248,12 @@
             <span>后序</span>
             <input type="radio" name="right" id="postorder" value="right">
         </label>
+         <label>
+            <span>重置</span>
+            <input type="radio" name="reset" id="reset" value="reset">
+        </label>
     </div>
-    <div id="chart-wrap">
+    <div id="chart-wrap" style="overflow:none">
         
         
     </div>

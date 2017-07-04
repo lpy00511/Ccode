@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dom 选择器</title>
+	<style type="text/css">
+		*{
+			box-sizing: border-box;
+		}
+		#page{
+			width: 600px;
+			height: 400px;
+			margin: auto;
+			background-color: #EED5D2;
+			padding: 20px 40px;
+		}
+		ul{
+			background: black;
+		    color: white;
+		    line-height: 47px;
+		    margin: auto;
+		    width: 520px;
+		}
+		ul li{
+			border: 1px solid #4D4D4D;
+			box-shadow: 0 1px 1px #4D4D4D;
+			background-color: #CD6839;
+			list-style: none;
+			padding: 0px 40px;
+			font-size: 22px;
+			margin-right: 40px;
+		}
+		.hot{
+			background-color: #CD5C5C;
+		}
+		.cool{
+			background-color: #66CDAA;
+		}
+	</style>
+</head>
+<body>
+	<div id="page">
+		<h1 id="header">List</h1>
+		<h2>Buy groceries</h2>
+		<ul>
+			<li id="one" class="hot">figs</li>
+			<li id="two" class="hot">pine nuts</li>
+			<li id="three" class="hot">honey</li>
+			<li id="four">balsamic vinegar</li>
+		</ul>
+		
+	</div>
+</body>
+<script type="text/javascript">
+			var itemTwo = document.getElementById('two');
+			var elText = itemTwo.firstChild.nodeValue;
+			elText = elText.replace('pine nuts','kale');
+			itemTwo.firstChild.nodeValue = elText;
+
+			// var firstItem = document.getElementById("one");
+			// var itemContent = firstItem.innerHTML;
+			// firstItem.innerHTML = '<a href=\"http://example.org\">'+itemContent+'</a>';
+			var text = document.getElementById("one").textContent;
+			console.log(text);
+			var text1 = document.getElementById("one").innerText;
+			console.log(text1);
+			var firstItem = document.getElementById('one');
+			firstItem.className = 'complete';
+			var fourthItem = document.getElementsByTagName('li')[3];
+			fourthItem.setAttribute('class','cool');
+		</script>
+</html>

@@ -162,7 +162,7 @@ require(['BinarySearchTree'], function() {
                     divList[i - 1].struct.style.backgroundColor = '#fff';
                     divList[i].struct.style.backgroundColor = 'orange';
                 } else {
-                    divList[divList.length-1].struct.style.backgroundColor='green';
+                    divList[divList.length-1].struct.style.backgroundColor='#48D1CC';
                    // 没见过这么邪门的代码，刚刚这样写就不行，写个循环，再去掉就好了。。。。
                    //在这里的进度最差。。。。。
                     clearInterval(timer);
@@ -187,7 +187,7 @@ require(['BinarySearchTree'], function() {
             }
         });
         //删除功能实现
-        
+        //tree.remove();
 });
 
 

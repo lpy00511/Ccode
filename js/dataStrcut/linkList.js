@@ -1,7 +1,6 @@
 function Node(elment){
 	this.elment = elment;
 	this.next = null;
-	console.log(this);
 }
 function Llist(){
 	this.head = new Node("head");
@@ -52,6 +51,7 @@ a.insert("1");
 a.insert("2");
 a.insert("3");
 a.insert("4");
+console.log(a);
 console.log(a.find("1").elment);
 console.log(a.findPrevious("2").elment);
 console.log(a.display());

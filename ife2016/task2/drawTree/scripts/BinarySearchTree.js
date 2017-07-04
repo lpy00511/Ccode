@@ -42,6 +42,9 @@ function BinarySearchTree(){
 	this.drawTree = function(callback){
 		createTree(root,callback);
 	};
+	this.remove = function(node){
+		removeNode(root,node);
+	};
 }
 /*
 *我们实现的方法包括：
@@ -99,7 +102,7 @@ var minNode = function(node){
 		while(node && node.left != null){
 			node = node.left;
 		}
-		return node.key;
+		return node;
 	}
 	return null;
 };
@@ -108,7 +111,7 @@ function maxNode(node){
 		while(node && node.right != null){
 			node = node.right;
 		}
-		return node.key;
+		return node;
 	}
 	return null;
 };
@@ -133,6 +136,36 @@ var createTree = function(node,callback){
 		createTree(node.right,callback);
 	}
 };
-var remove = function(){
-	
+var removeNode = function(node){
+	if(!node.left && !node.right)
+	{
+		node = null;
+		return node;
+	}else if(!node.left){
+		node = node.right;
+		return node;
+	}else if(!node.right){
+		node = node.left;
+		return node;
+	}else{
+		var aux = min(node.right);
+		node.key = aux.key;
+		node.right = remove(node.right,aux);
+		return node;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

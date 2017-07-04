@@ -6,7 +6,6 @@ function BinarySearchTree(){
 		this.key = key;
 		this.left = null;
 		this.right = null;
-		this.parent = null;
 	};
 	var root = null;
 	this.insert = function(key){
@@ -41,8 +40,8 @@ function BinarySearchTree(){
 	this.searchR = function(){
 		return searchNodeR(root);
 	};
-	this.searchP = function(key){
-		return searchNodeP(root,key);
+	this.remove = function(node){
+		return removeNode(node);
 	};
 }
 /*
@@ -58,16 +57,14 @@ remove(key):从树中移除某个键
 */
 var insertNode = function(node,newNode){
 	if(newNode.key < node.key){
-		if(node.left){
+		if(!node.left){
 			node.left = newNode;
-			newNode.parent = node;
 		}else{
 			insertNode(node.left,newNode);
 		}
 	}else{
-		if(node.right){
+		if(!node.right){
 			node.right = newNode;
-			newNode.parent = node;
 		}else{
 			insertNode(node.right,newNode);
 		}
@@ -99,7 +96,7 @@ var minNode = function(node){
 		while(node && node.left != null){
 			node = node.left;
 		}
-		return node.key;
+		return node;
 	}
 	return null;
 }
@@ -108,7 +105,7 @@ function maxNode(node){
 		while(node && node.right != null){
 			node = node.right;
 		}
-		return node.key;
+		return node;
 	}
 	return null;
 }
@@ -133,7 +130,7 @@ function searchNodeL(node){
 	}else {
 		return true;
 	}
-}
+} 
 function searchNodeR(node){
 	if(node == null){
 		return false;
@@ -144,7 +141,24 @@ function searchNodeR(node){
 		return true;
 	}
 }
-function searchNodeP(node,key){
-
+function removeNode(node){
+	if(!node.left && !node.right){
+		node = null;
+		return node;
+	}
+	else if(!node.left){
+		node = node.right;
+		return node;
+	} 
+	else if(!node.right){
+		node = node.left;
+		return node;
+	}
+	else{
+		var aux = min(node.right);
+		node.key = aux.key;
+		node.right = removeNode(aux);
+		return node;
+	}
 }
 module.exports = BinarySearchTree;

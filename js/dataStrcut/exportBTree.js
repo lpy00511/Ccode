@@ -18,13 +18,15 @@ function printNode(value){
 	console.log(value);
 }
 //树的遍历（1）中序遍历：也是中根遍历
-tree.inOrderTraverse(printNode);
+//tree.inOrderTraverse(printNode);
 //树的遍历 （2）先序遍历
 tree.preOrderTraverse(printNode);
 //输的遍历（3）后序遍历
-tree.postOrderTraverse(printNode);
+//tree.postOrderTraverse(printNode);
 var min_node = tree.min();
 console.log(min_node);
 var max_node = tree.max();
 console.log(max_node);
 console.log(tree.search(3));
+tree.remove(3)
+tree.preOrderTraverse(printNode);

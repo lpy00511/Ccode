@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>文档对象模型示例</title>
+	<style type="text/css">
+		*{
+			box-sizing: border-box;
+		}
+		#page{
+			width: 600px;
+			height: 400px;
+			margin: auto;
+			background-color: #EED5D2;
+			padding: 20px 40px;
+		}
+		ul{
+			background: black;
+		    color: white;
+		    line-height: 47px;
+		    margin: auto;
+		    width: 520px;
+		}
+		ul li{
+			border: 1px solid #4D4D4D;
+			box-shadow: 0 1px 1px #4D4D4D;
+			background-color: #CD6839;
+			list-style: none;
+			padding: 0px 40px;
+			font-size: 22px;
+			margin-right: 40px;
+		}
+		.hot{
+			background-color: #CD5C5C;
+		}
+		.cool{
+			background-color: #66CDAA;
+		}
+	</style>
+</head>
+<body>
+	<div style="display: none">
+		<h3>在这个例子中，我们要实现三个目标</h3>
+		<p>
+			1:在列表的开始和结尾处各添一个新项
+			在列表的开始处添加一个新项所使用的方法和在结尾处添加一个新元素所使用的方法是不同的。
+			2:给所有项设置class属性。
+			这里用到了循环遍历每一个’li‘元素，然后把它的class值更新为cool。
+			3:在页面标头添加列表项的数量
+
+		</p>
+	</div>
+	<div id="page">
+		<h1 id="header">List</h1>
+		<h2>Buy groceries</h2>
+		<ul>
+			<li id="one" class="hot">figs</li>
+			<li id="two" class="hot">pine nuts</li>
+			<li id="three" class="hot">honey</li>
+			<li id="four">balsamic vinegar</li>
+		</ul>
+	</div>
+
+</body>
+<script type="text/javascript" src="js/example1.js"></script>
+</html>

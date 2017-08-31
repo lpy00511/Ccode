@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>使用事件委托</title>
+	<style type="text/css">
+		#list{
+			margin:30px auto;
+			height: 120px;
+			width: 200px;
+		}
+		ul{
+			list-style: none;
+		}
+		.complete{
+			padding-left: 10px;
+			height: 30px;
+			line-height: 30px;
+			width: 200px;
+			background-color: #F08080;
+			border-radius: 5px;
+			box-shadow: 0 0 5px 3px #F0F0F0 inset;
+			
+		}
+		a{
+			display: block;
+			text-decoration: none;
+			color: #515151;
+			cursor: pointer;
+			width: 100%;
+		}
+		#message{
+			width: 200px;
+			height: 30px;
+			outline: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="list">
+		<ul id="shoppingList">
+			<li class="complete"><a href="#">fresh</a></li>
+			<li class="complete"><a href="#">pine nuts</a></li>
+			<li class="complete"><a href="#">honey</a></li>
+			<li class="complete"><a href="#">balsamic vinegar</a></li>
+		</ul>
+	</div>
+	<div>
+		<input id="message" name="username" type="text">
+	</div>
+<script type="text/javascript">
+	function getTarget(event){
+		if(!event){
+			event = window.event;
+		}
+		return event.target||event.srcElement;
+	}
+	function itemDone(event){
+		var target = getTarget(event);
+		var elParent = target.parentNode;
+		var elGrandparent = target.parentNode.parentNode;
+		elGrandparent.removeChild(elParent);
+		if(elGrandparent.children.length === 0){
+			alert('Your list is empty');
+		}
+		if(event.preventDefault){
+			event.preventDefault();   //Use preventDefault
+		}else{
+			e.returnValue = true;   //Use old IE version
+		}
+
+	}
+	var el = document.getElementById('shoppingList');
+	if(el.addEventListener){
+		el.addEventListener('click',function(event){
+			itemDone(event);
+			// console.log(getTarget(event));
+		},false);
+	}else{
+		el.attachEvent('onclick',function(event){
+			itemDone(event);
+			// console.log(getTarget(event));
+		});
+	}
+	//处理HTML5事件
+	function setup(){
+		var textInput = document.getElementById("message");
+		textInput.focus();
+	}
+	window.addEventListener('DOMContentLoaded',setup,false);
+	window.addEventListener('beforeunload',function(event){
+		var confirmationMessage = "\O/";
+		e.returnValue = confirmationMessage;  //// Gecko, Trident, Chrome 34+
+		return confirmationMessage;   // Gecko, WebKit, Chrome <34
+	},false);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>after清除浮动方式</title>
+	<style type="text/css">
+		.outer{
+			border:1px solid #ccc; 
+			background:#fc9; 
+			color:#fff; 
+			margin:50px auto; 
+			padding:50px;
+		}
+		.outer:after{
+			content: "";
+			height: 0;
+			display: block;
+			clear: both;
+		}
+		.outer{
+			zoom:1;
+		}
+		.boxA{
+			background-color: orange;
+			width: 80px;
+			height: 80px;
+			float: left;
+		}
+		.boxB{
+			background-color: lightblue;
+			height: 80px;
+			width: 80px;
+			float: left;
+		}
+		.boxC{
+			background-color: pink;
+			height: 80px;
+			width: 80px;
+			float:left;
+		}
+		/*.clear{
+			height: 0;
+			clear: both;
+		}*/
+		/*.over-flow{
+			overflow: auto;
+		}*/
+		.wrap{
+			/*float: left;*/
+			width: 100%;
+			height: 200px;
+			background-color: #ccc;
+
+		}
+		.ele{
+			float: left;
+			/*width: 200px;
+			height: 200px;*/
+			position: relative;
+		    left: 50%;
+		    top: 50%;
+		}
+		.ele-inner{
+			/*float: left;*/
+			position: relative;
+			left: -50%;
+			transform : translate3d(0, -50%, 0);
+			-webkit-transform : translate3d(0, -50%, 0);
+			background-color: #333;
+		}
+		div.container{
+			position: relative;
+			width: 200px;
+			height: 200px;
+			margin:20px auto;
+			background-color: #fc8;
+		}
+		div.container .box{
+			width: 100px;
+			height: 50px;
+			background-color: lightgreen;
+			position: absolute;
+			left:0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+			
+		}
+		.triangle{
+			position: absolute;
+			left:75px;
+			top:112.5px;
+			width: 25px;
+			height: 25px;
+			background-color: lightgreen;
+			transform:rotate(45deg);
+			-webkit-transform:rotate(45deg);
+			-ms-transform:rotate(45deg);
+			-moz-transform:rotate(45deg);
+			-o-transform:rotate(45deg);
+		}
+		.triangle1{
+			height: 0;
+			width: 0;
+			border-top: 10px solid red;
+			border-left:10px solid transparent;
+			border-right:10px solid transparent;
+			border-bottom:10px solid transparent;	
+		}
+		.wrap1{
+			/*float: left;*/
+			width:100%;
+			height: 400px;
+			background-color: #ccc;
+			text-align: center;
+			font-size: 0;
+		}
+		.placeholder{
+			/*float: left;*/
+			overflow: hidden;
+			width:0;
+			height: 100%;
+			vertical-align: middle;
+			display: inline-block;
+			/*margin-bottom: -50px;  */
+			/*此处的边距值为content的一半*/
+		}
+		.content{
+			/*position: relative;
+			left: 50%;
+			transform:translate3d(-50%,0,0);*/
+			/*clear: both;*/
+			width: 100px;
+			height: 100px;
+			display: inline-block;
+			background-color: #333;
+			vertical-align: middle;
+		}
+		.wrap2{
+			text-align: center;
+			font-size: 349.2px;/*约为高度的0.873,测试效果不是很理想*/
+			margin-left: auto;
+			margin-right: auto;
+			width: 400px;
+			height: 400px;
+			background-color: #ccc;
+		}
+		.inner-inline{
+			display: inline-block;
+			background-color: #333;
+			vertical-align: middle;
+			width: 100px;
+			height: 100px;
+		}
+		button{
+			width: 100%;
+			height: 400px;
+			background-color: #ccc;
+			border-width: 0;
+		}
+		button:focus{
+			outline: none;
+		}
+		button div{
+			display: inline-block;
+			font-size: 18px;
+			background-color: #333;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div class="outer over-flow">	
+		<div class="boxA"></div>
+		<div class="boxB"></div>
+		<div class="boxC"></div>
+	</div>
+
+	<div class="wrap">
+		<div class="ele">
+			<div class="ele-inner">
+				居中居中居中<br>
+				居中居中居中<br>
+				居中居中居中<br>
+				居中居中居中<br>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="box">
+		</div>
+		<div class="triangle"></div>
+	</div>
+	<div class="triangle1">
+		
+	</div>
+	<div class="wrap1">
+	  <div class="placeholder"></div>
+	  <div class='content'></div>
+	</div>
+	<div class="wrap2">
+	  <div class="inner-inline"></div>
+	</div>
+	<button>
+	  <div>
+	    居中居中居中居中居中居中<br>
+	    居中居中居中居中居中居中<br>
+	    居中居中居中居中居中居中<br>
+	    居中居中居中居中居中居中<br>
+	  </div>  
+	</button>
+</body>
+</html>

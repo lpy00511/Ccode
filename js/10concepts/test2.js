@@ -1,4 +1,4 @@
-var a = require("./BinarySearchTree");
+var a = require("./fun");
 var tree = new a();
 tree.insert(11);
 tree.insert(7);
